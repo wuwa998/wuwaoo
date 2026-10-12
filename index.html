@@ -1,9 +1,1063 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><title>mobile-wrapper</title>
-<style>html,body{margin:0;padding:0}</style>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="从泰国、印度、巴基斯坦、俄罗斯带来的手机/笔记本电脑在中国（苏州职业技术大学）如何安全、不损坏地使用：用电标准对比、插头转换器 vs 电压转换器、插排安全指南。中英双语科普。">
+<title>四国电器在中国安全使用指南｜Safe Use of Imported Devices in China</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='9' y='14' width='14' height='13' rx='3' fill='%230F766E'/%3E%3Crect x='12' y='5' width='3' height='11' fill='%23B45309'/%3E%3Crect x='17' y='5' width='3' height='11' fill='%23B45309'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F4F6F7; --surface:#FFFFFF; --ink:#1C2A33; --muted:#5B6A74;
+  --primary:#0F766E; --primary-dark:#0B5C56; --primary-soft:#E4F2F0;
+  --green:#15803D; --green-soft:#DCFCE7;
+  --orange:#C2410C; --orange-soft:#FFEDD5;
+  --red:#B91C1C; --red-soft:#FEE2E2;
+  --amber:#B45309; --amber-soft:#FEF3C7;
+  --line:#DFE6EB; --radius:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;-webkit-text-size-adjust:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand svg{flex:none;display:block}
+.brand h1{margin:0;font-size:16px;line-height:1.35;font-weight:700}
+.lang-switch{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none;background:#fff}
+.lang-switch button{border:0;background:transparent;padding:7px 14px;font-size:14px;cursor:pointer;color:var(--muted);font-family:inherit}
+.lang-switch button.active{background:var(--primary);color:#fff;font-weight:700}
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,var(--primary) 0%,#0B5C56 100%);color:#fff;border-radius:0 0 18px 18px;margin:0 0 8px}
+.hero .wrap{padding-top:34px;padding-bottom:34px}
+.hero .kicker{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 14px;font-size:13px;margin-bottom:14px}
+.hero h2{margin:0 0 10px;font-size:26px;line-height:1.3}
+.hero p.lead{margin:0;font-size:15px;opacity:.95;max-width:46em}
+/* ---------- sections ---------- */
+main{padding-bottom:48px}
+section{margin:30px 0}
+.sec-title{font-size:21px;line-height:1.35;margin:0 0 6px;border-left:4px solid var(--primary);padding-left:12px;font-weight:800}
+.sec-sub{margin:0 0 18px;color:var(--muted);font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:14px 0}
+.card h3{margin:0 0 8px;font-size:17px}
+/* overview cards */
+.ov-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+@media(min-width:860px){.ov-grid{grid-template-columns:repeat(3,1fr)}}
+.ov-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;border-top:4px solid var(--primary)}
+.ov-card .tag{display:inline-block;font-size:12px;font-weight:800;color:var(--primary-dark);background:var(--primary-soft);border-radius:6px;padding:2px 9px;margin-bottom:8px}
+.ov-card p{margin:0;font-size:14px}
+sup.cite{color:var(--primary);font-weight:700;font-size:11px;padding-left:1px}
+/* self check */
+.sc-steps{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+@media(min-width:860px){.sc-steps{grid-template-columns:repeat(3,1fr)}}
+.sc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.sc-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;font-size:14px;margin-bottom:8px}
+.sc-card h3{margin:0 0 6px;font-size:16px}
+.sc-card p{margin:0;font-size:14px}
+.nameplate-wrap{text-align:center;margin:16px 0 4px}
+.plugshape-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:10px}
+.shape-chip{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:13px}
+.shape-chip b{color:var(--primary-dark)}
+/* ---------- tables ---------- */
+.table-scroll{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:820px}
+thead th{background:var(--primary-soft);color:var(--primary-dark);font-weight:800;text-align:left;padding:10px 12px;border-bottom:2px solid var(--line);white-space:nowrap}
+tbody td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td .mono{font-weight:700;white-space:nowrap}
+.table-hint{color:var(--muted);font-size:13px;margin:6px 0 0}
+/* ---------- charts ---------- */
+.chart-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:16px 0}
+.chart-card h3{margin:0 0 4px;font-size:17px}
+.chart{width:100%;height:330px}
+@media(min-width:700px){.chart{height:360px}}
+.chart-concl{background:var(--green-soft);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:14px;margin-top:10px}
+.chart-fail{background:var(--amber-soft);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;padding:8px 14px;font-size:13px;color:var(--amber);margin-top:8px}
+/* ---------- plugs ---------- */
+.legend-row{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0 16px}
+.legend-item{display:inline-flex;align-items:center;gap:8px;font-size:13px}
+.dot{width:12px;height:12px;border-radius:50%;flex:none}
+.dot.green{background:var(--green)} .dot.orange{background:var(--orange)} .dot.red{background:var(--red)}
+.plug-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:560px){.plug-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.plug-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1220px){.plug-grid{grid-template-columns:repeat(4,1fr)}}
+.plug-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:6px}
+.plug-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.plug-type{font-size:15px;font-weight:800;color:var(--primary-dark)}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:800;white-space:nowrap}
+.badge.green{background:var(--green-soft);color:var(--green)}
+.badge.orange{background:var(--orange-soft);color:var(--orange)}
+.badge.red{background:var(--red-soft);color:var(--red)}
+.plug-card svg{width:100%;height:auto;background:#FBFCFD;border:1px solid var(--line);border-radius:8px}
+.plug-cap{font-size:13px;margin:0;color:var(--ink)}
+.plug-note{font-size:12px;margin:6px 0 0;color:var(--muted);line-height:1.55}
+.socket-note{background:var(--amber-soft);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;padding:10px 14px;font-size:14px;margin-top:14px}
+/* ---------- adapter vs converter ---------- */
+.ac-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:14px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.ac-col{padding:16px}
+.ac-col h3{margin:0 0 8px;font-size:17px;display:flex;align-items:center;gap:8px}
+.ac-col.plug-col{border-bottom:1px solid var(--line)}
+@media(min-width:860px){.ac-grid{grid-template-columns:1fr 1fr}.ac-col.plug-col{border-bottom:0;border-right:1px solid var(--line)}}
+.ac-col ul{margin:0;padding-left:18px}
+.ac-col li{font-size:14px;margin:6px 0}
+.ac-icon{width:22px;height:22px;flex:none}
+/* ---------- strip guide ---------- */
+.strip-list{margin:14px 0 0;padding:0;list-style:none;counter-reset:strip}
+.strip-list li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 14px 58px;margin:10px 0;font-size:14px}
+.strip-list li::before{counter-increment:strip;content:counter(strip);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.strip-list li b{display:block;margin-bottom:3px;font-size:15px}
+/* ---------- spu ---------- */
+.spu-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:12px 0}
+.spu-card h3{margin:0 0 6px;font-size:16px;color:var(--primary-dark)}
+.spu-card p{margin:0;font-size:14px}
+.spu-quote{background:var(--primary-soft);border-left:4px solid var(--primary);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13.5px;margin:10px 0 0}
+.spu-quote .src{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
+/* ---------- disclaimer ---------- */
+.disclaimer{background:var(--amber-soft);border:1px solid #F2DEB5;border-radius:var(--radius);padding:14px 18px;font-size:14px;margin-top:16px}
+.disclaimer b{color:var(--amber)}
+/* ---------- refs ---------- */
+.refs-group{margin:18px 0 0}
+.refs-group h3{font-size:16px;margin:0 0 8px;color:var(--primary-dark)}
+.refs-group ol{margin:0;padding-left:24px}
+.refs-group li{font-size:13.5px;margin:7px 0;word-break:break-all}
+.refs-group .url{color:var(--primary);text-decoration:none;word-break:break-all}
+.refs-group .url:hover{text-decoration:underline}
+.refs-group .access{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);background:var(--surface);padding:22px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+/* ---------- note / misc ---------- */
+.note{background:var(--amber-soft);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;padding:10px 14px;font-size:14px;margin:12px 0}
+.okbox{background:var(--green-soft);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:14px;margin:12px 0}
+a{color:var(--primary)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-<iframe id="f" src="四国电器中国安全使用指南_verify.html" style="width:390px;height:900px;border:0;display:block"></iframe>
+
+<!-- ===== 页头 / header ===== -->
+<header>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="12" width="16" height="14" rx="3" fill="#0F766E"/><rect x="11" y="4" width="3" height="11" fill="#B45309"/><rect x="18" y="4" width="3" height="11" fill="#B45309"/><rect x="13" y="18" width="6" height="3" rx="1" fill="#FFFFFF"/></svg>
+      <h1 data-i18n="header.title">四国电器在中国安全使用指南</h1>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" id="btnZh" data-lang="zh">中文</button>
+      <button type="button" id="btnEn" data-lang="en">English</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker" data-i18n="hero.kicker">面向留学生与全体学生的安全用电科普</span>
+    <h2 data-i18n="hero.title">从泰国、印度、巴基斯坦、俄罗斯带来的手机与笔记本电脑，在中国如何安全使用？</h2>
+    <p class="lead" data-i18n="hero.lead">本页以苏州职业技术大学宿舍/教室为场景，对比五国市电标准，回答“要不要买转换器、买哪种、插排怎么用才安全”这三个问题。全部事实均有可核验来源，正文上标数字为参考文献编号。</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- ===== 概览区 / overview ===== -->
+<section id="overview" aria-labelledby="ov-title">
+  <h2 class="sec-title" id="ov-title" data-i18n="sec.overview">核心结论速览</h2>
+  <p class="sec-sub" data-i18n="sec.overview.sub">先看结论，再往下看依据与图示。</p>
+  <div class="ov-grid">
+    <div class="ov-card">
+      <span class="tag" data-i18n="ov.a.tag">电压：无需转换</span>
+      <p><span data-i18n="ov.a.body">泰国、印度、巴基斯坦、俄罗斯均为 220–230V / 50Hz，与中国（220V/50Hz）同属一个电压体系；手机、笔记本电脑充电器普遍标称“100–240V~ 50/60Hz”宽电压。因此四国设备在中国使用</span><strong data-i18n="ov.a.strong">均无需电压转换器</strong><span data-i18n="ov.a.tail">。</span><sup class="cite">35</sup><sup class="cite">36</sup><sup class="cite">43</sup><sup class="cite">44</sup><sup class="cite">45</sup><sup class="cite">48</sup></p>
+    </div>
+    <div class="ov-card">
+      <span class="tag" data-i18n="ov.b.tag">插头：取决于形状</span>
+      <p><span data-i18n="ov.b.body">是否需要转换器取决于</span><strong data-i18n="ov.b.strong">插头形状</strong><span data-i18n="ov.b.body2">：泰国扁二脚（Type A）可直插中国两孔插座；泰国圆脚（Type C）以及印度（C/D/M）、巴基斯坦（C/D/G/M）、俄罗斯（C/F）的圆脚插头，需</span><strong data-i18n="ov.b.strong2">插头转换器</strong><span data-i18n="ov.b.tail">——它只改插脚形状、不带变压器，十几元即可。</span><sup class="cite">35</sup><sup class="cite">43</sup><sup class="cite">44</sup><sup class="cite">45</sup><sup class="cite">47</sup><sup class="cite">46</sup><sup class="cite">51</sup></p>
+    </div>
+    <div class="ov-card">
+      <span class="tag" data-i18n="ov.c.tag">插排：安全使用</span>
+      <p><span data-i18n="ov.c.body">在中国宿舍使用插排：认准</span><strong data-i18n="ov.c.strong">3C 认证的新国标五孔插排</strong><span data-i18n="ov.c.tail">；不超载、不串联、不近水、不用破损产品；人走断电；并遵守学校“禁用大功率电器、不私拉乱接”等规定。</span><sup class="cite">4</sup><sup class="cite">6</sup><sup class="cite">19</sup><sup class="cite">23</sup><sup class="cite">27</sup><sup class="cite">31</sup></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 设备自查 / self-check ===== -->
+<section id="selfcheck" aria-labelledby="sc-title">
+  <h2 class="sec-title" id="sc-title" data-i18n="sec.selfcheck">设备自查方法</h2>
+  <p class="sec-sub" data-i18n="sec.selfcheck.sub">拿出你的充电器/适配器，三步判断。</p>
+  <div class="sc-steps">
+    <div class="sc-card">
+      <span class="sc-num">1</span>
+      <h3 data-i18n="sc.1.title">一看铭牌：输入电压范围</h3>
+      <p><span data-i18n="sc.1.body">找到充电器上的“INPUT / 输入”一栏。若标注</span> <strong data-i18n="sc.1.strong">“100–240V~ 50/60Hz”</strong><span data-i18n="sc.1.body2">（或类似区间），即为宽电压设计，直接用于中国 220V 电网安全。即使只标“230V”，中国标称 220V 也落在其容差带内（IEC 60038 将 220V/240V 系统协调至 230V，设备按 230V±10%（207–253V）设计；中国供电允许 220V +7%/−10%）。</span><sup class="cite">36</sup><sup class="cite">32</sup><sup class="cite">33</sup><sup class="cite">34</sup></p>
+    </div>
+    <div class="sc-card">
+      <span class="sc-num">2</span>
+      <h3 data-i18n="sc.2.title">二看插头：形状决定能否直插</h3>
+      <p><strong data-i18n="sc.2.strong1">两扁平行脚</strong><span data-i18n="sc.2.body1"> → 可直插中国两孔插座；</span><strong data-i18n="sc.2.strong2">两圆脚 / 三圆脚 / 英式方脚</strong><span data-i18n="sc.2.body2"> → 中国新国标插座只接受扁孔，需要插头转换器。下方“插头示意图”一节的绿/橙/红颜色标记即为对应关系。</span><sup class="cite">15</sup><sup class="cite">35</sup><sup class="cite">46</sup></p>
+    </div>
+    <div class="sc-card">
+      <span class="sc-num">3</span>
+      <h3 data-i18n="sc.3.title">三不确定：先问再用</h3>
+      <p data-i18n="sc.3.body">若铭牌看不清或不确定，请咨询宿管老师、辅导员或专业电气人员，核对铭牌后再使用。本页为科普信息，不替代设备铭牌与专业人员判断。</p>
+    </div>
+  </div>
+  <div class="nameplate-wrap" aria-hidden="true">
+    <svg width="300" height="120" viewBox="0 0 300 120" role="img">
+      <rect x="10" y="30" width="280" height="78" rx="10" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/>
+      <rect x="60" y="12" width="180" height="24" rx="12" fill="#E4F2F0"/>
+      <text x="150" y="29" text-anchor="middle" font-size="14" font-weight="700" fill="#0B5C56" data-i18n="np.title">AC ADAPTER 电源适配器</text>
+      <text x="30" y="58" font-size="15" font-weight="800" fill="#1C2A33" data-i18n="np.input">INPUT 输入:</text>
+      <text x="30" y="80" font-size="15" font-weight="800" fill="#B45309" data-i18n="np.value">100–240V~ 50/60Hz</text>
+      <text x="30" y="98" font-size="12" fill="#5B6A74" data-i18n="np.note">(wide-range 宽电压 → 中国 220V 可用)</text>
+    </svg>
+  </div>
+  <div class="plugshape-row">
+    <span class="shape-chip"><svg width="22" height="22" viewBox="0 0 22 22"><rect x="5" y="3" width="4" height="14" rx="1" fill="#64748B"/><rect x="13" y="3" width="4" height="14" rx="1" fill="#64748B"/></svg><span><b data-i18n="shape.flat">扁二脚</b><span data-i18n="shape.flat.d">直插两孔</span></span></span>
+    <span class="shape-chip"><svg width="22" height="22" viewBox="0 0 22 22"><rect x="5" y="3" width="5" height="14" rx="2.5" fill="#64748B"/><rect x="12" y="3" width="5" height="14" rx="2.5" fill="#64748B"/></svg><span><b data-i18n="shape.round">圆脚</b><span data-i18n="shape.round.d">需插头转换器</span></span></span>
+    <span class="shape-chip"><svg width="22" height="22" viewBox="0 0 22 22"><rect x="9" y="1" width="4" height="10" rx="2" fill="#64748B"/><rect x="4" y="8" width="4" height="11" rx="2" fill="#64748B"/><rect x="14" y="8" width="4" height="11" rx="2" fill="#64748B"/></svg><span><b data-i18n="shape.tri">三圆脚/三角</b><span data-i18n="shape.tri.d">需插头转换器</span></span></span>
+    <span class="shape-chip"><svg width="22" height="22" viewBox="0 0 22 22"><rect x="9" y="1" width="4" height="10" rx="2" fill="#64748B"/><rect x="3" y="8" width="6" height="4" rx="1" fill="#64748B"/><rect x="13" y="8" width="6" height="4" rx="1" fill="#64748B"/></svg><span><b data-i18n="shape.g">英式方脚</b><span data-i18n="shape.g.d">需插头转换器</span></span></span>
+  </div>
+</section>
+
+<!-- ===== 五国标准对比表 / comparison table ===== -->
+<section id="compare" aria-labelledby="cmp-title">
+  <h2 class="sec-title" id="cmp-title" data-i18n="sec.table">五国用电标准对比</h2>
+  <p class="sec-sub" data-i18n="sec.table.sub">五国 = 泰国、印度、巴基斯坦、俄罗斯 + 中国（基准）。核心数据优先引用官方标准（TISI / BIS / ГОСТ / SAMR）与权威机构，旅行类网站仅作补充交叉验证；2026-10-12 访问。</p>
+  <div class="table-scroll" id="cmpTableWrap"><!-- JS 渲染 --></div>
+  <p class="table-hint" data-i18n="t.hint">← 表格较宽，在手机上可左右滑动查看 →</p>
+  <div class="note"><strong data-i18n="sec.table.note.h">勘误说明：</strong><span data-i18n="sec.table.note">任务稿中的“印度 IS 1660”经核实为《锻造与铸造铝制器皿》标准，并非插座标准；印度家用插头插座现行标准为 IS 1293:2019（第四修订）。中国现行插座标准为强制性 GB 1002-2024（2025-08-01 实施，代替 GB/T 1002-2021），配套通用要求 GB/T 2099.1-2021、转换器 GB/T 2099.3-2022、延长线插座 GB 2099.7-2024。</span></div>
+</section>
+
+<!-- ===== 可视化 / charts ===== -->
+<section id="charts" aria-labelledby="ch-title">
+  <h2 class="sec-title" id="ch-title" data-i18n="sec.charts">数据可视化：一眼看懂五国差异</h2>
+  <p class="sec-sub" data-i18n="sec.charts.sub">图表由 ECharts 绘制（CDN 加载，失败时下方文字结论仍可读）。</p>
+
+  <div class="chart-card">
+    <h3 data-i18n="chart1.title">图1：五国标称电压与频率对比</h3>
+    <div id="chart-voltage" class="chart" role="img" aria-label="Bar chart of nominal voltage and frequency by country"></div>
+    <div class="chart-fail" id="chartFail1" style="display:none" data-i18n="chart.fail">图表库加载失败，请参阅下方文字结论。</div>
+    <div class="chart-concl"><strong data-i18n="chart1.concl.h">静态结论：</strong><span data-i18n="chart1.concl">泰国、印度、巴基斯坦、俄罗斯标称 230V，中国标称 220V，五国频率均为 50Hz。230V 设备在中国 220V 电网下处于 IEC 60038 协调容差带内（设备按 230V±10% 设计，即 207–253V），且手机/笔记本充电器普遍为 100–240V 宽电压，电压维度完全兼容，无需电压转换器。</span><sup class="cite">13</sup><sup class="cite">37</sup><sup class="cite">40</sup><sup class="cite">48</sup></div>
+  </div>
+
+  <div class="chart-card">
+    <h3 data-i18n="chart2.title">图2：插头类型 × 国家（官方标准 / 常见 / 不用）</h3>
+    <div id="chart-plugs" class="chart" role="img" aria-label="Heatmap of plug types by country"></div>
+    <div class="chart-fail" id="chartFail2" style="display:none" data-i18n="chart.fail">图表库加载失败，请参阅下方文字结论。</div>
+    <div class="chart-concl"><strong data-i18n="chart2.concl.h">静态结论：</strong><span data-i18n="chart2.concl">五国中只有 Type A（两扁脚）与 Type I（三扁 V 形）能直接插入中国国标扁孔插座；其余类型（B/C/D/E/F/G/M/O）在中国均需插头转换器。Type C 圆脚不再被新国标五孔插座接受（GB/T 1002-2021 已删除“单相两极双用插座”）。</span><sup class="cite">13</sup><sup class="cite">37</sup><sup class="cite">40</sup><sup class="cite">48</sup><sup class="cite">50</sup></div>
+  </div>
+</section>
+
+<!-- ===== 插头与插座示意图 / plug & socket SVG ===== -->
+<section id="plugs" aria-labelledby="pg-title">
+  <h2 class="sec-title" id="pg-title" data-i18n="sec.plugs">插头与插座示意图</h2>
+  <p class="sec-sub" data-i18n="sec.plugs.sub">正视图示意（引脚朝上）。引脚形状、数量与接地方式依据调研报告的插头特征表绘制。</p>
+  <div class="legend-row">
+    <span class="legend-item"><span class="dot green"></span><span data-i18n="p.legend.green">绿色 = 可直插中国插座</span></span>
+    <span class="legend-item"><span class="dot orange"></span><span data-i18n="p.legend.orange">橙色 = 需插头转换器</span></span>
+    <span class="legend-item"><span class="dot red"></span><span data-i18n="p.legend.red">红色 = 不能直插 / 非标</span></span>
+  </div>
+
+  <div class="plug-grid">
+    <!-- A -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.A.name">A 型 · 两扁平行脚</span><span class="badge green" data-i18n="b.green">可直插</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="34" y="26" width="7" height="54" fill="#64748B"/><rect x="79" y="26" width="7" height="54" fill="#64748B"/><circle cx="37.5" cy="38" r="2.2" fill="#FFFFFF"/><circle cx="82.5" cy="38" r="2.2" fill="#FFFFFF"/></svg>
+      <p class="plug-cap" data-i18n="plug.A.cap">两扁脚可直插中国两孔（2P）插座，无接地。</p>
+    </div>
+    <!-- B -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.B.name">B 型 · 两扁 + 圆地脚</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="32" y="26" width="7" height="54" fill="#64748B"/><rect x="81" y="26" width="7" height="54" fill="#64748B"/><rect x="55" y="48" width="10" height="32" rx="5" fill="#475569"/></svg>
+      <p class="plug-cap" data-i18n="plug.B.cap">圆地脚在中国插座无对应插孔，无法完全插入，需插头转换器。</p>
+    </div>
+    <!-- C -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.C.name">C 型 · 两圆脚（Europlug）</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="34" y="18" width="8" height="62" rx="4" fill="#64748B"/><rect x="78" y="18" width="8" height="62" rx="4" fill="#64748B"/><rect x="31" y="44" width="14" height="36" rx="7" fill="#9AA6AF"/><rect x="75" y="44" width="14" height="36" rx="7" fill="#9AA6AF"/></svg>
+      <p class="plug-cap" data-i18n="plug.C.cap">圆脚不能直插新国标五孔插座（GB/T 1002-2021 已删除双用插座），需插头转换器。</p>
+    </div>
+    <!-- D -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.D.name">D 型 · 三圆脚（BS 546 5A）</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="51" y="14" width="11" height="66" rx="5.5" fill="#475569"/><rect x="32" y="48" width="9" height="32" rx="4.5" fill="#64748B"/><rect x="69" y="48" width="9" height="32" rx="4.5" fill="#64748B"/></svg>
+      <p class="plug-cap" data-i18n="plug.D.cap">三圆脚三角排列，有接地；中国插座为扁孔，需插头转换器。</p>
+    </div>
+    <!-- E -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.E.name">E 型 · 两圆 + 插座侧地针</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="33" y="18" width="9" height="62" rx="4.5" fill="#64748B"/><rect x="78" y="18" width="9" height="62" rx="4.5" fill="#64748B"/><circle cx="55.5" cy="42" r="7" fill="#FBFCFD" stroke="#64748B" stroke-width="2.5"/></svg>
+      <p class="plug-cap" data-i18n="plug.E.cap">接地针在插座侧，插头留有圆孔；法式系统，需插头转换器。</p>
+    </div>
+    <!-- F -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.F.name">F 型 · 两圆 + 侧夹接地（Schuko）</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="33" y="18" width="9" height="62" rx="4.5" fill="#64748B"/><rect x="78" y="18" width="9" height="62" rx="4.5" fill="#64748B"/><rect x="12" y="60" width="9" height="20" rx="2" fill="#94A3B8"/><rect x="99" y="60" width="9" height="20" rx="2" fill="#94A3B8"/></svg>
+      <p class="plug-cap" data-i18n="plug.F.cap">上下两侧接地夹（俄式常见）；中国插座无对应结构，需插头转换器。</p>
+    </div>
+    <!-- G -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.G.name">G 型 · 英式三扁（BS 1363）</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="51" y="10" width="6" height="72" fill="#475569"/><rect x="17" y="50" width="26" height="12" rx="1.5" fill="#64748B"/><rect x="77" y="50" width="26" height="12" rx="1.5" fill="#64748B"/><rect x="16" y="56" width="28" height="6" rx="3" fill="#9AA6AF"/><rect x="76" y="56" width="28" height="6" rx="3" fill="#9AA6AF"/></svg>
+      <p class="plug-cap" data-i18n="plug.G.cap">三扁脚三角、接地脚较长并内带保险丝；需插头转换器。</p>
+    </div>
+    <!-- I -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.I.name">I 型 · 三扁 V 形</span><span class="badge green" data-i18n="b.green">可直插</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="52" y="12" width="6" height="70" fill="#475569"/><rect x="30" y="44" width="7" height="36" fill="#64748B" transform="rotate(30 33.5 62)"/><rect x="83" y="44" width="7" height="36" fill="#64748B" transform="rotate(-30 86.5 62)"/></svg>
+      <p class="plug-cap" data-i18n="plug.I.cap">中国国标 2P+E 三孔插座即此族；可直插（带接地）。</p>
+    </div>
+    <!-- M -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.M.name">M 型 · 三圆脚加大（BS 546 15A）</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="49" y="16" width="14" height="64" rx="7" fill="#475569"/><rect x="29" y="50" width="12" height="30" rx="6" fill="#64748B"/><rect x="69" y="50" width="12" height="30" rx="6" fill="#64748B"/></svg>
+      <p class="plug-cap" data-i18n="plug.M.cap">比 D 型更大的三圆脚，多用于大功率设备；需插头转换器。</p>
+    </div>
+    <!-- O -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.O.name">O 型 · 泰国三圆脚（TIS 166-2549）</span><span class="badge orange" data-i18n="b.orange">需插头转换器</span></div>
+      <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="20" y="78" width="80" height="64" rx="7" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="49" y="16" width="14" height="64" rx="7" fill="#475569"/><rect x="31" y="52" width="10" height="28" rx="5" fill="#64748B"/><rect x="69" y="52" width="10" height="28" rx="5" fill="#64748B"/></svg>
+      <p class="plug-cap" data-i18n="plug.O.cap">三圆脚、其中接地脚较粗（异形）；IEC 无官方字母，业界俗称 Type O。需插头转换器。</p>
+    </div>
+    <!-- China socket -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.cn.name">中国新国标五孔插座</span><span class="badge green" data-i18n="b.green">基准</span></div>
+      <svg viewBox="0 0 160 130" aria-hidden="true"><rect x="12" y="10" width="136" height="110" rx="10" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="57" y="18" width="6" height="24" rx="2.5" fill="#334155"/><rect x="97" y="18" width="6" height="24" rx="2.5" fill="#334155"/><text x="37" y="50" font-size="9" fill="#5B6A74">2P</text><rect x="77" y="50" width="6" height="30" rx="2.5" fill="#334155"/><rect x="66" y="76" width="7" height="24" fill="#334155" transform="rotate(30 69.5 88)"/><rect x="87" y="76" width="7" height="24" fill="#334155" transform="rotate(-30 90.5 88)"/><text x="100" y="50" font-size="9" fill="#5B6A74">2P+E</text></svg>
+      <p class="plug-cap" data-i18n="plug.cn.cap">上方两扁孔（2P，兼容 Type A）+ 下方 2P+E：地孔为竖长扁孔、位于三孔区上方（GB 1002-2024：面向插座时 E 极在上），孔深大于两斜孔；两斜孔与垂直方向各成 30°。全部为扁矩形插孔，不接受圆脚。</p>
+      <p class="plug-note"><span data-i18n="plug.cn.geo">孔位几何按 GB 1002-2024 / GB/T 1002-2021 图样示意（E 极在上、两斜孔与垂直各成 30°）。</span><sup class="cite">15</sup></p>
+    </div>
+    <!-- Universal -->
+    <div class="plug-card">
+      <div class="plug-head"><span class="plug-type" data-i18n="plug.univ.name">老式万用孔插座</span><span class="badge red" data-i18n="b.red">非标</span></div>
+      <svg viewBox="0 0 160 130" aria-hidden="true"><rect x="12" y="10" width="136" height="110" rx="10" fill="#FFFFFF" stroke="#C9D2D9" stroke-width="2"/><rect x="50" y="52" width="60" height="10" rx="5" fill="#334155"/><rect x="66" y="36" width="10" height="60" rx="5" fill="#334155"/><text x="80" y="20" font-size="9" fill="#B91C1C" text-anchor="middle" data-i18n="plug.univ.badge">一孔兼容多型</text></svg>
+      <p class="plug-cap" data-i18n="plug.univ.cap">两孔三孔合一的“万用孔”：可插圆脚但接触不良、易过热起火；2010-06 起禁产、2011-06 起全面禁售，请勿购买使用。</p>
+    </div>
+  </div>
+
+  <div class="socket-note"><strong data-i18n="p.note.c.h">结论：</strong><span data-i18n="p.note.c">Type C 圆脚不能直插新国标五孔插座——GB/T 1002-2021 已删除“单相两极双用插座”（扁+圆混合孔），强制性标准 GB 1002-2024（2025-08-01 实施）延续此规定；老式万用孔插座虽能插入圆脚，但属不安全的历史遗留产品。</span></div>
+</section>
+
+<!-- ===== 插头转换器 vs 电压转换器 ===== -->
+<section id="adapter" aria-labelledby="ac-title">
+  <h2 class="sec-title" id="ac-title" data-i18n="sec.ac">插头转换器 vs 电压转换器</h2>
+  <p class="sec-sub" data-i18n="sec.ac.sub">别买错！两者作用完全不同，价格与体积也差一个量级。</p>
+  <div class="ac-grid">
+    <div class="ac-col plug-col">
+      <h3>
+        <svg class="ac-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="10" height="11" rx="2" fill="#C2410C"/><rect x="6" y="3" width="2.5" height="5" fill="#B45309"/><rect x="9.5" y="3" width="2.5" height="5" fill="#B45309"/></svg>
+        <span data-i18n="ac.plug.name">插头转换器（plug adapter）</span>
+      </h3>
+      <ul>
+        <li><b data-i18n="ac.plug.l1.h">只改插脚几何形状</b><span data-i18n="ac.plug.l1">（扁↔圆、两脚↔三脚），不改变电压等级；内部通常只是一组金属接触件。</span></li>
+        <li data-i18n="ac.plug.l2">适用前提：设备额定电压与当地电网电压匹配（如 100–240V 宽电压充电器接 220V）。</li>
+        <li data-i18n="ac.plug.l3">价格：十几元；体积小、重量轻。</li>
+        <li><b data-i18n="ac.plug.l4.h">不能</b><span data-i18n="ac.plug.l4">把 110V 设备接到 220V 电网——接上会烧毁设备。</span></li>
+      </ul>
+    </div>
+    <div class="ac-col">
+      <h3>
+        <svg class="ac-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="11" height="12" rx="2" fill="#0F766E"/><rect x="17" y="8" width="4" height="8" rx="1" fill="#0B5C56"/><line x1="6" y1="10" x2="11" y2="10" stroke="#E4F2F0" stroke-width="1.5"/><line x1="6" y1="13" x2="11" y2="13" stroke="#E4F2F0" stroke-width="1.5"/></svg>
+        <span data-i18n="ac.volt.name">电压转换器（voltage converter）</span>
+      </h3>
+      <ul>
+        <li data-i18n="ac.volt.l1">通过变压器/电子变换把电网电压升或降到设备需要的电压（如 220V→110V）。</li>
+        <li data-i18n="ac.volt.l2">适用于额定电压与当地电网不匹配的设备（如美版 110V 设备在中国 220V 下使用）。</li>
+        <li data-i18n="ac.volt.l3">价格高、体积大、较重（变压器款）。</li>
+        <li data-i18n="ac.volt.l4">四国手机/笔记本充电器电压与电网匹配，在中国不需要电压转换器。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="okbox"><strong data-i18n="ac.concl.h">结论：</strong><span data-i18n="ac.concl">在中国，泰国、印度、巴基斯坦、俄罗斯四国的手机/笔记本充电器，只需要插头转换器（泰国扁脚甚至什么都不用），绝无电压转换需求。</span><sup class="cite">36</sup><sup class="cite">35</sup></div>
+</section>
+
+<!-- ===== 插排安全使用指南 ===== -->
+<section id="strip" aria-labelledby="st-title">
+  <h2 class="sec-title" id="st-title" data-i18n="sec.strip">插排（插线板）安全使用指南</h2>
+  <p class="sec-sub" data-i18n="sec.strip.sub">宿舍/教室场景下，插排是火灾风险的高发点。以下条目均有来源编号。</p>
+  <ol class="strip-list">
+    <li><b data-i18n="st.1.t">买 3C 认证的新国标五孔插排</b><span data-i18n="st.1.b">认准 CCC 标志与“保护门”（安全门）；自 2017-04-14 起，无 3C 认证的转换器/插排不得出厂、销售或进口。</span><sup class="cite">19</sup><sup class="cite">20</sup><sup class="cite">23</sup><sup class="cite">27</sup></li>
+    <li><b data-i18n="st.2.t">不买万用孔、不买两芯</b><span data-i18n="st.2.b">万用孔（两孔三孔合一）自 2010-06 起禁止生产、2011-06 起全面禁售，接触不良易起火；三孔插座必须配三芯带地线插头，两芯插座不合格。</span><sup class="cite">18</sup><sup class="cite">23</sup><sup class="cite">24</sup><sup class="cite">25</sup><sup class="cite">26</sup></li>
+    <li><b data-i18n="st.3.t">看额定电流 / 功率，不超载</b><span data-i18n="st.3.b">常见额定电流 6A / 10A / 16A：10A / 250V~ 的插排承载极限约 2200W，16A 约 3520W（按 220V 计算）。空调、微波炉等大功率电器不得插在额定电流小的插座上，应“专插专用”。</span><sup class="cite">27</sup><sup class="cite">28</sup><sup class="cite">31</sup></li>
+    <li><b data-i18n="st.4.t">不串联插排（不插排叠插排）</b><span data-i18n="st.4.b">一个插排接另一个插排会累积接触电阻与电流，超载风险成倍上升。</span><sup class="cite">27</sup><sup class="cite">31</sup></li>
+    <li><b data-i18n="st.5.t">远离潮湿与水源</b><span data-i18n="st.5.b">插排不放在床上、不靠近水杯水盆；拔插时保持手部干燥。</span><sup class="cite">31</sup><sup class="cite">4</sup></li>
+    <li><b data-i18n="st.6.t">不用破损 / 老化插排</b><span data-i18n="st.6.b">插孔发黑、插头松动、线缆破损即应淘汰；插排使用年限一般 3–5 年；出现温度过高、打火、接触不良及时更换。</span><sup class="cite">27</sup><sup class="cite">31</sup></li>
+    <li><b data-i18n="st.7.t">正确插拔</b><span data-i18n="st.7.b">捏住插头拔出，不拉拽电源线；插头过松过紧都要换。</span><sup class="cite">27</sup><sup class="cite">31</sup></li>
+    <li><b data-i18n="st.8.t">人走断电、长时间不用拔掉</b><span data-i18n="st.8.b">室内无人时关闭电器和电源开关；离校时彻底关闭各类充电设备与插座电源。</span><sup class="cite">31</sup><sup class="cite">6</sup><sup class="cite">10</sup></li>
+    <li><b data-i18n="st.9.t">遵守宿舍禁用大功率电器规定</b><span data-i18n="st.9.b">学校明令禁止电吹风、电热水壶、电热锅、热得快、电炉等违章电器，禁止私拉乱接电源；国家层面《高等学校消防安全管理规定》亦禁止在人员密集场所违规使用大功率电器，教育部亦要求高校排查整治学生宿舍违规用电。</span><sup class="cite">4</sup><sup class="cite">6</sup><sup class="cite">7</sup><sup class="cite">8</sup><sup class="cite">9</sup><sup class="cite">29</sup><sup class="cite">30</sup></li>
+    <li><b data-i18n="st.10.t">认准最新强制新国标 GB 2099.7-2024</b><span data-i18n="st.10.b">2025-08-01 实施的《家用和类似用途延长线插座 安全技术规范》规定：4 位及以上普通延长线插座应带过电流保护器件（过载保护），并规范电动自行车充电等场景。</span><sup class="cite">21</sup><sup class="cite">22</sup></li>
+  </ol>
+</section>
+
+<!-- ===== 苏州职业技术大学专区 / SPU ===== -->
+<section id="spu" aria-labelledby="spu-title">
+  <h2 class="sec-title" id="spu-title" data-i18n="sec.spu">苏州职业技术大学专区</h2>
+  <p class="sec-sub" data-i18n="sec.spu.sub">以下内容摘自学校官网公开页面原文（访问核验日期 2026-10-12）。</p>
+
+  <div class="spu-card">
+    <h3 data-i18n="spu.name.title">校名与官网</h3>
+    <p data-i18n="spu.name.body">现行校名为“苏州职业技术大学”。2025 年 6 月，教育部《关于同意设置苏州职业技术大学的函》（教发函〔2025〕279 号）批准以苏州市职业大学为基础设立苏州职业技术大学，同时撤销苏州市职业大学的建制；学校为公办本科层次职业学校，官网域名沿用 www.jssvc.edu.cn。<sup class="cite">1</sup><sup class="cite">2</sup><sup class="cite">3</sup></p>
+    <div class="spu-quote"><p data-i18n="spu.q1">“经教育部党组会议研究决定，同意以苏州市职业大学为基础设立苏州职业技术大学……同时撤销苏州市职业大学的建制。……苏州职业技术大学为公办本科层次职业学校。”</p><span class="src" data-i18n="spu.q1.src">—— 教育部函（教发函〔2025〕279 号），来源 [2]</span></div>
+  </div>
+
+  <div class="spu-card">
+    <h3 data-i18n="spu.intl.title">留学生住宿管理制度</h3>
+    <p data-i18n="spu.intl.body">对留学生最直接相关的《国际学生住宿管理制度》明确规定：不得将插线板放置在床上；禁止使用大功率电器及容易引起火灾的电器；禁止私拉乱接、损坏拆卸改装寝室线路设备；违反相关规定的，学校有权取消其住宿资格。该页面为 2022-03-10 发布的历史文档，标题沿用旧校名；国际学生的入学申请与招生简章见国际招生栏目。<sup class="cite">4</sup><sup class="cite">5</sup></p>
+    <div class="spu-quote"><p data-i18n="spu.q2">“第三条……不得将插线板放置在床上。第四条 禁止使用大功率电器及容易引起火灾的电器；禁止使用明火器具……第十条 学生如违反国际学生住宿管理规定，学校有权取消其住宿资格。”</p><span class="src" data-i18n="spu.q2.src">—— 国际学生住宿管理制度，来源 [4]</span></div>
+  </div>
+
+  <div class="spu-card">
+    <h3 data-i18n="spu.security.title">保卫处安全教育内容</h3>
+    <p data-i18n="spu.security.body">保卫处《大学生消防安全常识》《防火、灭火、逃生知识》要求：宿舍不乱拉乱接电线；不使用电炉、电热杯、热得快、电饭煲等电器；室内无人时关掉电器和电源开关；离开时务必切断电源。学校还常态化开展宿舍用电安全专项检查与消防培训。<sup class="cite">6</sup><sup class="cite">11</sup><sup class="cite">12</sup></p>
+    <div class="spu-quote"><p data-i18n="spu.q3">“不乱拉乱接电线；不使用电炉、电热杯、热得快、电饭煲等电器；……室内无人时，应关掉电器和电源开关。”</p><span class="src" data-i18n="spu.q3.src">—— 保卫处安全教育栏目，来源 [6]</span></div>
+  </div>
+
+  <div class="spu-card">
+    <h3 data-i18n="spu.lecture.title">2025 暑期留校学生用电安全讲座</h3>
+    <p data-i18n="spu.lecture.body">2025 年暑期留校学生安全专题讲座围绕“用电安全”与“火灾逃生”两大主题，详细说明宿舍违规电器的危害，强调需规范使用空调、电风扇等电器，避免私拉电线、超负荷用电。<sup class="cite">7</sup></p>
+    <div class="spu-quote"><p data-i18n="spu.q4">“他详细说明宿舍违规电器的危害，强调需规范使用空调、电风扇等电器，避免私拉电线、超负荷用电，从源头防范火灾风险。”</p><span class="src" data-i18n="spu.q4.src">—— 保卫处 2025-07-01 新闻，来源 [7]</span></div>
+  </div>
+
+  <div class="spu-card">
+    <h3 data-i18n="spu.offices.title">学工处通知要点</h3>
+    <p data-i18n="spu.offices.body">学工处在假期/寒暑假通知中多次重申：严禁使用违章电器（包括电吹风、电热水壶、电热锅等），不私拉乱接电源，不使用明火；离校时关电、关水、关窗。<sup class="cite">8</sup><sup class="cite">9</sup><sup class="cite">10</sup></p>
+    <div class="spu-quote">
+      <p><span data-i18n="spu.q5.p1">“留校学生严禁使用违章电器（包括电吹风、电热水壶、电热锅等），不私拉乱接电源。”</span><sup class="cite">8</sup></p>
+      <p><span data-i18n="spu.q5.p2">“离校时关电、关水、关窗。”</span><sup class="cite">9</sup></p>
+      <span class="src" data-i18n="spu.q5.src">—— 综合学工处 2024–2026 通知</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 免责声明 / disclaimer ===== -->
+<section id="disclaimer" aria-labelledby="dis-title">
+  <h2 class="sec-title" id="dis-title" data-i18n="sec.disclaimer">免责声明</h2>
+  <div class="disclaimer">
+    <p data-i18n="dis.body"><b>本页为科普信息，不构成专业电气意见。</b>使用任何设备前，请核对设备铭牌与当地插座/插排的额定参数；如不确定，请咨询宿管老师、辅导员或专业电气人员。文中引用的标准、数据与校规均来自公开可核验来源，访问日期为 2026-10-12。</p>
+  </div>
+</section>
+
+<!-- ===== 参考文献 / references ===== -->
+<section id="references" aria-labelledby="ref-title">
+  <h2 class="sec-title" id="ref-title" data-i18n="sec.refs">参考文献</h2>
+  <p class="sec-sub" data-i18n="sec.refs.sub">按调研报告整理：苏州职业技术大学官网页面优先，其次国家标准与政府/权威来源，再为国际标准机构与权威数据。正文上标编号与本清单一一对应。</p>
+  <div id="refGroups"><!-- JS 渲染 --></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-i18n="footer.note">安全用电 · 从我做起 · 苏州职业技术大学</span>
+    <span data-i18n="footer.date">最后更新：2026-10-12</span>
+  </div>
+</footer>
+
+<script>
+/* ================= i18n 字典 ================= */
+var I18N = {
+zh: {
+  "header.title":"四国电器在中国安全使用指南",
+  "hero.kicker":"面向留学生与全体学生的安全用电科普",
+  "hero.title":"从泰国、印度、巴基斯坦、俄罗斯带来的手机与笔记本电脑，在中国如何安全使用？",
+  "hero.lead":"本页以苏州职业技术大学宿舍/教室为场景，对比五国市电标准，回答“要不要买转换器、买哪种、插排怎么用才安全”这三个问题。全部事实均有可核验来源，正文上标数字为参考文献编号。",
+  "sec.overview":"核心结论速览",
+  "sec.overview.sub":"先看结论，再往下看依据与图示。",
+  "ov.a.tag":"电压：无需转换",
+  "ov.a.body":"泰国、印度、巴基斯坦、俄罗斯均为 220–230V / 50Hz，与中国（220V/50Hz）同属一个电压体系；手机、笔记本电脑充电器普遍标称“100–240V~ 50/60Hz”宽电压。因此四国设备在中国使用",
+  "ov.a.strong":"均无需电压转换器",
+  "ov.a.tail":"。",
+  "ov.b.tag":"插头：取决于形状",
+  "ov.b.body":"是否需要转换器取决于",
+  "ov.b.strong":"插头形状",
+  "ov.b.body2":"：泰国扁二脚（Type A）可直插中国两孔插座；泰国圆脚（Type C）以及印度（C/D/M）、巴基斯坦（C/D/G/M）、俄罗斯（C/F）的圆脚插头，需",
+  "ov.b.strong2":"插头转换器",
+  "ov.b.tail":"——它只改插脚形状、不带变压器，十几元即可。",
+  "ov.c.tag":"插排：安全使用",
+  "ov.c.body":"在中国宿舍使用插排：认准",
+  "ov.c.strong":"3C 认证的新国标五孔插排",
+  "ov.c.tail":"；不超载、不串联、不近水、不用破损产品；人走断电；并遵守学校“禁用大功率电器、不私拉乱接”等规定。",
+  "sec.selfcheck":"设备自查方法",
+  "sec.selfcheck.sub":"拿出你的充电器/适配器，三步判断。",
+  "sc.1.title":"一看铭牌：输入电压范围",
+  "sc.1.body":"找到充电器上的“INPUT / 输入”一栏。若标注",
+  "sc.1.strong":"“100–240V~ 50/60Hz”",
+  "sc.1.body2":"（或类似区间），即为宽电压设计，直接用于中国 220V 电网安全。即使只标“230V”，中国标称 220V 也落在其容差带内（IEC 60038 将 220V/240V 系统协调至 230V，设备按 230V±10%（207–253V）设计；中国供电允许 220V +7%/−10%）。",
+  "sc.2.title":"二看插头：形状决定能否直插",
+  "sc.2.strong1":"两扁平行脚",
+  "sc.2.body1":" → 可直插中国两孔插座；",
+  "sc.2.strong2":"两圆脚 / 三圆脚 / 英式方脚",
+  "sc.2.body2":" → 中国新国标插座只接受扁孔，需要插头转换器。下方“插头示意图”一节的绿/橙/红颜色标记即为对应关系。",
+  "sc.3.title":"三不确定：先问再用",
+  "sc.3.body":"若铭牌看不清或不确定，请咨询宿管老师、辅导员或专业电气人员，核对铭牌后再使用。本页为科普信息，不替代设备铭牌与专业人员判断。",
+  "np.title":"AC ADAPTER 电源适配器",
+  "np.input":"INPUT 输入:",
+  "np.value":"100–240V~ 50/60Hz",
+  "np.note":"(wide-range 宽电压 → 中国 220V 可用)",
+  "shape.flat":"扁二脚","shape.flat.d":"直插两孔",
+  "shape.round":"圆脚","shape.round.d":"需插头转换器",
+  "shape.tri":"三圆脚/三角","shape.tri.d":"需插头转换器",
+  "shape.g":"英式方脚","shape.g.d":"需插头转换器",
+  "sec.table":"五国用电标准对比",
+  "sec.table.sub":"五国 = 泰国、印度、巴基斯坦、俄罗斯 + 中国（基准）。核心数据优先引用官方标准（TISI / BIS / ГОСТ / SAMR）与权威机构，旅行类网站仅作补充交叉验证；2026-10-12 访问。",
+  "t.hint":"← 表格较宽，在手机上可左右滑动查看 →",
+  "t.country":"国家","t.voltage":"标称电压","t.freq":"频率","t.official":"官方插头类型","t.common":"常见插头类型","t.std":"标准体系 / 标准号","t.compat":"与中国插座兼容性","t.notes":"备注",
+  "sec.table.note.h":"勘误说明：",
+  "sec.table.note":"任务稿中的“印度 IS 1660”经核实为《锻造与铸造铝制器皿》标准，并非插座标准；印度家用插头插座现行标准为 IS 1293:2019（第四修订）。中国现行插座标准为强制性 GB 1002-2024（2025-08-01 实施，代替 GB/T 1002-2021），配套通用要求 GB/T 2099.1-2021、转换器 GB/T 2099.3-2022、延长线插座 GB 2099.7-2024。",
+  "sec.charts":"数据可视化：一眼看懂五国差异",
+  "sec.charts.sub":"图表由 ECharts 绘制（CDN 加载，失败时下方文字结论仍可读）。",
+  "chart1.title":"图1：五国标称电压与频率对比",
+  "chart1.series.v":"标称电压 (V)","chart1.series.f":"频率 (Hz)",
+  "chart1.y.v":"电压 V","chart1.y.f":"频率 Hz",
+  "chart1.ref":"中国标称 220V（参考）",
+  "chart1.concl.h":"静态结论：",
+  "chart1.concl":"泰国、印度、巴基斯坦、俄罗斯标称 230V，中国标称 220V，五国频率均为 50Hz。230V 设备在中国 220V 电网下处于 IEC 60038 协调容差带内（设备按 230V±10% 设计，即 207–253V），且手机/笔记本充电器普遍为 100–240V 宽电压，电压维度完全兼容，无需电压转换器。",
+  "chart2.title":"图2：插头类型 × 国家（官方标准 / 常见 / 不用）",
+  "chart2.official":"官方标准","chart2.common":"常见","chart2.notused":"不用",
+  "chart2.concl.h":"静态结论：",
+  "chart2.concl":"五国中只有 Type A（两扁脚）与 Type I（三扁 V 形）能直接插入中国国标扁孔插座；其余类型（B/C/D/E/F/G/M/O）在中国均需插头转换器。Type C 圆脚不再被新国标五孔插座接受（GB/T 1002-2021 已删除“单相两极双用插座”）。",
+  "chart.fail":"图表库加载失败，请参阅下方文字结论。",
+  "sec.plugs":"插头与插座示意图",
+  "sec.plugs.sub":"正视图示意（引脚朝上）。引脚形状、数量与接地方式依据调研报告的插头特征表绘制。",
+  "p.legend.green":"绿色 = 可直插中国插座",
+  "p.legend.orange":"橙色 = 需插头转换器",
+  "p.legend.red":"红色 = 不能直插 / 非标",
+  "b.green":"可直插","b.orange":"需插头转换器","b.red":"非标",
+  "plug.A.name":"A 型 · 两扁平行脚","plug.A.cap":"两扁脚可直插中国两孔（2P）插座，无接地。",
+  "plug.B.name":"B 型 · 两扁 + 圆地脚","plug.B.cap":"圆地脚在中国插座无对应插孔，无法完全插入，需插头转换器。",
+  "plug.C.name":"C 型 · 两圆脚（Europlug）","plug.C.cap":"圆脚不能直插新国标五孔插座（GB/T 1002-2021 已删除双用插座），需插头转换器。",
+  "plug.D.name":"D 型 · 三圆脚（BS 546 5A）","plug.D.cap":"三圆脚三角排列，有接地；中国插座为扁孔，需插头转换器。",
+  "plug.E.name":"E 型 · 两圆 + 插座侧地针","plug.E.cap":"接地针在插座侧，插头留有圆孔；法式系统，需插头转换器。",
+  "plug.F.name":"F 型 · 两圆 + 侧夹接地（Schuko）","plug.F.cap":"上下两侧接地夹（俄式常见）；中国插座无对应结构，需插头转换器。",
+  "plug.G.name":"G 型 · 英式三扁（BS 1363）","plug.G.cap":"三扁脚三角、接地脚较长并内带保险丝；需插头转换器。",
+  "plug.I.name":"I 型 · 三扁 V 形","plug.I.cap":"中国国标 2P+E 三孔插座即此族；可直插（带接地）。",
+  "plug.M.name":"M 型 · 三圆脚加大（BS 546 15A）","plug.M.cap":"比 D 型更大的三圆脚，多用于大功率设备；需插头转换器。",
+  "plug.O.name":"O 型 · 泰国三圆脚（TIS 166-2549）","plug.O.cap":"三圆脚、其中接地脚较粗（异形）；IEC 无官方字母，业界俗称 Type O。需插头转换器。",
+  "plug.cn.name":"中国新国标五孔插座","plug.cn.cap":"上方两扁孔（2P，兼容 Type A）+ 下方 2P+E：地孔为竖长扁孔、位于三孔区上方（GB 1002-2024：面向插座时 E 极在上），孔深大于两斜孔；两斜孔与垂直方向各成 30°。全部为扁矩形插孔，不接受圆脚。","plug.cn.geo":"孔位几何按 GB 1002-2024 / GB/T 1002-2021 图样示意（E 极在上、两斜孔与垂直各成 30°）。",
+  "plug.univ.name":"老式万用孔插座","plug.univ.cap":"两孔三孔合一的“万用孔”：可插圆脚但接触不良、易过热起火；2010-06 起禁产、2011-06 起全面禁售，请勿购买使用。","plug.univ.badge":"一孔兼容多型",
+  "p.note.c.h":"结论：",
+  "p.note.c":"Type C 圆脚不能直插新国标五孔插座——GB/T 1002-2021 已删除“单相两极双用插座”（扁+圆混合孔），强制性标准 GB 1002-2024（2025-08-01 实施）延续此规定；老式万用孔插座虽能插入圆脚，但属不安全的历史遗留产品。",
+  "sec.ac":"插头转换器 vs 电压转换器",
+  "sec.ac.sub":"别买错！两者作用完全不同，价格与体积也差一个量级。",
+  "ac.plug.name":"插头转换器（plug adapter）",
+  "ac.plug.l1.h":"只改插脚几何形状",
+  "ac.plug.l1":"（扁↔圆、两脚↔三脚），不改变电压等级；内部通常只是一组金属接触件。",
+  "ac.plug.l2":"适用前提：设备额定电压与当地电网电压匹配（如 100–240V 宽电压充电器接 220V）。",
+  "ac.plug.l3":"价格：十几元；体积小、重量轻。",
+  "ac.plug.l4.h":"不能",
+  "ac.plug.l4":"把 110V 设备接到 220V 电网——接上会烧毁设备。",
+  "ac.volt.name":"电压转换器（voltage converter）",
+  "ac.volt.l1":"通过变压器/电子变换把电网电压升或降到设备需要的电压（如 220V→110V）。",
+  "ac.volt.l2":"适用于额定电压与当地电网不匹配的设备（如美版 110V 设备在中国 220V 下使用）。",
+  "ac.volt.l3":"价格高、体积大、较重（变压器款）。",
+  "ac.volt.l4":"四国手机/笔记本充电器电压与电网匹配，在中国不需要电压转换器。",
+  "ac.concl.h":"结论：",
+  "ac.concl":"在中国，泰国、印度、巴基斯坦、俄罗斯四国的手机/笔记本充电器，只需要插头转换器（泰国扁脚甚至什么都不用），绝无电压转换需求。",
+  "sec.strip":"插排（插线板）安全使用指南",
+  "sec.strip.sub":"宿舍/教室场景下，插排是火灾风险的高发点。以下条目均有来源编号。",
+  "st.1.t":"买 3C 认证的新国标五孔插排",
+  "st.1.b":"认准 CCC 标志与“保护门”（安全门）；自 2017-04-14 起，无 3C 认证的转换器/插排不得出厂、销售或进口。",
+  "st.2.t":"不买万用孔、不买两芯",
+  "st.2.b":"万用孔（两孔三孔合一）自 2010-06 起禁止生产、2011-06 起全面禁售，接触不良易起火；三孔插座必须配三芯带地线插头，两芯插座不合格。",
+  "st.3.t":"看额定电流 / 功率，不超载",
+  "st.3.b":"常见额定电流 6A / 10A / 16A：10A / 250V~ 的插排承载极限约 2200W，16A 约 3520W（按 220V 计算）。空调、微波炉等大功率电器不得插在额定电流小的插座上，应“专插专用”。",
+  "st.4.t":"不串联插排（不插排叠插排）",
+  "st.4.b":"一个插排接另一个插排会累积接触电阻与电流，超载风险成倍上升。",
+  "st.5.t":"远离潮湿与水源",
+  "st.5.b":"插排不放在床上、不靠近水杯水盆；拔插时保持手部干燥。",
+  "st.6.t":"不用破损 / 老化插排",
+  "st.6.b":"插孔发黑、插头松动、线缆破损即应淘汰；插排使用年限一般 3–5 年；出现温度过高、打火、接触不良及时更换。",
+  "st.7.t":"正确插拔",
+  "st.7.b":"捏住插头拔出，不拉拽电源线；插头过松过紧都要换。",
+  "st.8.t":"人走断电、长时间不用拔掉",
+  "st.8.b":"室内无人时关闭电器和电源开关；离校时彻底关闭各类充电设备与插座电源。",
+  "st.9.t":"遵守宿舍禁用大功率电器规定",
+  "st.9.b":"学校明令禁止电吹风、电热水壶、电热锅、热得快、电炉等违章电器，禁止私拉乱接电源；国家层面《高等学校消防安全管理规定》亦禁止在人员密集场所违规使用大功率电器，教育部亦要求高校排查整治学生宿舍违规用电。",
+  "st.10.t":"认准最新强制新国标 GB 2099.7-2024",
+  "st.10.b":"2025-08-01 实施的《家用和类似用途延长线插座 安全技术规范》规定：4 位及以上普通延长线插座应带过电流保护器件（过载保护），并规范电动自行车充电等场景。",
+  "sec.spu":"苏州职业技术大学专区",
+  "sec.spu.sub":"以下内容摘自学校官网公开页面原文（访问核验日期 2026-10-12）。",
+  "spu.name.title":"校名与官网",
+  "spu.name.body":"现行校名为“苏州职业技术大学”。2025 年 6 月，教育部《关于同意设置苏州职业技术大学的函》（教发函〔2025〕279 号）批准以苏州市职业大学为基础设立苏州职业技术大学，同时撤销苏州市职业大学的建制；学校为公办本科层次职业学校，官网域名沿用 www.jssvc.edu.cn。",
+  "spu.q1":"“经教育部党组会议研究决定，同意以苏州市职业大学为基础设立苏州职业技术大学……同时撤销苏州市职业大学的建制。……苏州职业技术大学为公办本科层次职业学校。”",
+  "spu.q1.src":"—— 教育部函（教发函〔2025〕279 号），来源 [2]",
+  "spu.intl.title":"留学生住宿管理制度",
+  "spu.intl.body":"对留学生最直接相关的《国际学生住宿管理制度》明确规定：不得将插线板放置在床上；禁止使用大功率电器及容易引起火灾的电器；禁止私拉乱接、损坏拆卸改装寝室线路设备；违反相关规定的，学校有权取消其住宿资格。该页面为 2022-03-10 发布的历史文档，标题沿用旧校名；国际学生的入学申请与招生简章见国际招生栏目。",
+  "spu.q2":"“第三条……不得将插线板放置在床上。第四条 禁止使用大功率电器及容易引起火灾的电器；禁止使用明火器具……第十条 学生如违反国际学生住宿管理规定，学校有权取消其住宿资格。”",
+  "spu.q2.src":"—— 国际学生住宿管理制度，来源 [4]",
+  "spu.security.title":"保卫处安全教育内容",
+  "spu.security.body":"保卫处《大学生消防安全常识》《防火、灭火、逃生知识》要求：宿舍不乱拉乱接电线；不使用电炉、电热杯、热得快、电饭煲等电器；室内无人时关掉电器和电源开关；离开时务必切断电源。学校还常态化开展宿舍用电安全专项检查与消防培训。",
+  "spu.q3":"“不乱拉乱接电线；不使用电炉、电热杯、热得快、电饭煲等电器；……室内无人时，应关掉电器和电源开关。”",
+  "spu.q3.src":"—— 保卫处安全教育栏目，来源 [6]",
+  "spu.lecture.title":"2025 暑期留校学生用电安全讲座",
+  "spu.lecture.body":"2025 年暑期留校学生安全专题讲座围绕“用电安全”与“火灾逃生”两大主题，详细说明宿舍违规电器的危害，强调需规范使用空调、电风扇等电器，避免私拉电线、超负荷用电。",
+  "spu.q4":"“他详细说明宿舍违规电器的危害，强调需规范使用空调、电风扇等电器，避免私拉电线、超负荷用电，从源头防范火灾风险。”",
+  "spu.q4.src":"—— 保卫处 2025-07-01 新闻，来源 [7]",
+  "spu.offices.title":"学工处通知要点",
+  "spu.offices.body":"学工处在假期/寒暑假通知中多次重申：严禁使用违章电器（包括电吹风、电热水壶、电热锅等），不私拉乱接电源，不使用明火；离校时关电、关水、关窗。",
+  "spu.q5.p1":"“留校学生严禁使用违章电器（包括电吹风、电热水壶、电热锅等），不私拉乱接电源。”",
+  "spu.q5.p2":"“离校时关电、关水、关窗。”",
+  "spu.q5.src":"—— 综合学工处 2024–2026 通知",
+  "sec.disclaimer":"免责声明",
+  "dis.body":"本页为科普信息，不构成专业电气意见。使用任何设备前，请核对设备铭牌与当地插座/插排的额定参数；如不确定，请咨询宿管老师、辅导员或专业电气人员。文中引用的标准、数据与校规均来自公开可核验来源，访问日期为 2026-10-12。",
+  "sec.refs":"参考文献",
+  "sec.refs.sub":"按调研报告整理：苏州职业技术大学官网页面优先，其次国家标准与政府/权威来源，再为国际标准机构与权威数据。正文上标编号与本清单一一对应。",
+  "refs.access":"访问日期：2026-10-12",
+  "footer.note":"安全用电 · 从我做起 · 苏州职业技术大学",
+  "footer.date":"最后更新：2026-10-12"
+},
+en: {
+  "header.title":"Safe Use of Imported Devices in China",
+  "hero.kicker":"A safety guide for international and all students",
+  "hero.title":"Phones & laptops from Thailand, India, Pakistan and Russia — how to use them safely in China?",
+  "hero.lead":"Using the dormitories and classrooms of Suzhou Vocational University of Technology as the scenario, this page compares the mains standards of five countries and answers three questions: do you need an adapter, which kind, and how to use a power strip safely. Every fact has a verifiable source; superscript numbers refer to the reference list.",
+  "sec.overview":"Key takeaways",
+  "sec.overview.sub":"Read the conclusions first; the evidence and diagrams follow.",
+  "ov.a.tag":"Voltage: no converter",
+  "ov.a.body":"Thailand, India, Pakistan and Russia all use 220–230V / 50Hz — the same family as China's 220V / 50Hz. Phone and laptop chargers are typically rated “100–240V~ 50/60Hz” (wide range). Devices from these four countries therefore need",
+  "ov.a.strong":"no voltage converter",
+  "ov.a.tail":" in China.",
+  "ov.b.tag":"Plug: shape decides",
+  "ov.b.body":"Whether you need an adapter depends on the",
+  "ov.b.strong":"plug shape",
+  "ov.b.body2":": Thai flat two-pin (Type A) plugs fit Chinese 2-pin sockets directly; round-pin plugs from Thailand (C) and India (C/D/M), Pakistan (C/D/G/M), Russia (C/F) need a",
+  "ov.b.strong2":"plug adapter",
+  "ov.b.tail":" — it only changes pin shape, has no transformer, and costs only a few yuan.",
+  "ov.c.tag":"Power strips: use safely",
+  "ov.c.body":"In Chinese dorms, buy",
+  "ov.c.strong":"a CCC-certified, new-standard 5-hole power strip",
+  "ov.c.tail":"; don't overload it, don't daisy-chain, keep it away from water, never use damaged products; unplug when you leave; and follow the school rules banning high-power appliances and unauthorized wiring.",
+  "sec.selfcheck":"Check your own device",
+  "sec.selfcheck.sub":"Take out your charger / adapter and follow these three steps.",
+  "sc.1.title":"1. Read the nameplate (input range)",
+  "sc.1.body":"Find the “INPUT / 输入” line on the charger. If it says",
+  "sc.1.strong":"“100–240V~ 50/60Hz”",
+  "sc.1.body2":" (or a similar range), it is a wide-range design and is safe on China's 220V mains. Even if it only says “230V”, China's nominal 220V falls within the tolerance band (IEC 60038 harmonises 220V/240V systems to 230V; equipment is designed for 230V±10%, i.e. 207–253V; China allows 220V +7%/−10%).",
+  "sc.2.title":"2. Look at the plug shape",
+  "sc.2.strong1":"Two flat parallel pins",
+  "sc.2.body1":" → plug directly into Chinese 2-pin sockets;",
+  "sc.2.strong2":"two round pins / three round pins / British square pins",
+  "sc.2.body2":" → Chinese new-standard sockets only accept flat slots, so you need a plug adapter. The green/orange/red marks in the “Plug & socket diagrams” section below show the match.",
+  "sc.3.title":"3. Not sure? Ask first",
+  "sc.3.body":"If the label is unclear or you are unsure, ask the dorm manager, your counselor, or a qualified electrician, and verify the nameplate before use. This page is general information and does not replace the device label or professional judgment.",
+  "np.title":"AC ADAPTER (power supply)",
+  "np.input":"INPUT:",
+  "np.value":"100–240V~ 50/60Hz",
+  "np.note":"(wide-range → safe on China 220V)",
+  "shape.flat":"Flat 2-pin","shape.flat.d":"Direct fit (2-pin)",
+  "shape.round":"Round pins","shape.round.d":"Plug adapter needed",
+  "shape.tri":"3 round pins / triangle","shape.tri.d":"Plug adapter needed",
+  "shape.g":"British square pins","shape.g.d":"Plug adapter needed",
+  "sec.table":"Comparison: five countries' mains standards",
+  "sec.table.sub":"Five countries = Thailand, India, Pakistan, Russia + China (baseline). Core data prefers official standards (TISI / BIS / GOST / SAMR) and authoritative bodies; travel-type sites serve only as supplementary cross-checks; accessed 2026-10-12.",
+  "t.hint":"← The table is wide; swipe sideways on mobile →",
+  "t.country":"Country","t.voltage":"Nominal voltage","t.freq":"Frequency","t.official":"Official plug type","t.common":"Common plug types","t.std":"Standard(s)","t.compat":"Compatibility with China","t.notes":"Notes",
+  "sec.table.note.h":"Corrections:",
+  "sec.table.note":"“IS 1660” in the brief was verified to be the wrought and cast aluminium utensils standard, not a socket standard; India's current household plug & socket standard is IS 1293:2019 (4th revision). China's current socket standard is the mandatory GB 1002-2024 (effective 2025-08-01, replacing GB/T 1002-2021), supported by GB/T 2099.1-2021 (general requirements), GB/T 2099.3-2022 (adapters) and GB 2099.7-2024 (extension sockets).",
+  "sec.charts":"Visualised comparison at a glance",
+  "sec.charts.sub":"Charts are rendered with ECharts (loaded via CDN; text conclusions below remain readable if loading fails).",
+  "chart1.title":"Chart 1: Nominal voltage & frequency by country",
+  "chart1.series.v":"Nominal voltage (V)","chart1.series.f":"Frequency (Hz)",
+  "chart1.y.v":"Voltage V","chart1.y.f":"Frequency Hz",
+  "chart1.ref":"China nominal 220V (ref.)",
+  "chart1.concl.h":"Static conclusion:",
+  "chart1.concl":"Thailand, India, Pakistan and Russia are rated 230V nominal; China is 220V; all five run at 50Hz. A 230V-rated device on China's 220V grid stays inside the IEC 60038 harmonised tolerance band (equipment designed for 230V±10% = 207–253V), and phone/laptop chargers are usually 100–240V wide-range anyway — voltage is fully compatible, no converter needed.",
+  "chart2.title":"Chart 2: Plug type × country (official / common / not used)",
+  "chart2.official":"Official","chart2.common":"Common","chart2.notused":"Not used",
+  "chart2.concl.h":"Static conclusion:",
+  "chart2.concl":"Among the five countries, only Type A (two flat pins) and Type I (three flat pins, V shape) fit Chinese standard flat-slot sockets directly; all other types (B/C/D/E/F/G/M/O) need a plug adapter in China. Type C round pins are no longer accepted by new-standard 5-hole sockets (GB/T 1002-2021 removed the “dual-use socket”).",
+  "chart.fail":"Chart library failed to load — see the text conclusions below.",
+  "sec.plugs":"Plug & socket diagrams",
+  "sec.plugs.sub":"Front-view sketches (pins pointing up). Pin shapes, counts and earthing follow the plug feature table in the research report.",
+  "p.legend.green":"Green = plugs directly into Chinese sockets",
+  "p.legend.orange":"Orange = needs a plug adapter",
+  "p.legend.red":"Red = cannot plug in / non-standard",
+  "b.green":"Direct fit","b.orange":"Adapter needed","b.red":"Non-standard",
+  "plug.A.name":"Type A · two flat parallel pins","plug.A.cap":"Flat 2-pin plugs directly into a Chinese 2-pin (2P) socket; no earth.",
+  "plug.B.name":"Type B · two flat + round earth","plug.B.cap":"The round earth pin has no matching hole in Chinese sockets; cannot fully insert — plug adapter needed.",
+  "plug.C.name":"Type C · two round pins (Europlug)","plug.C.cap":"Round pins cannot fit new-standard 5-hole sockets (GB/T 1002-2021 removed the dual-use socket) — plug adapter needed.",
+  "plug.D.name":"Type D · three round pins (BS 546 5A)","plug.D.cap":"Three round pins in a triangle with earth; Chinese sockets are flat — plug adapter needed.",
+  "plug.E.name":"Type E · two round + socket-side earth pin","plug.E.cap":"The earth pin sits on the socket side and the plug has a matching hole; French system — plug adapter needed.",
+  "plug.F.name":"Type F · two round + side earth clips (Schuko)","plug.F.cap":"Earth clips at top and bottom sides (common in Russia); no matching structure in China — plug adapter needed.",
+  "plug.G.name":"Type G · British three flat (BS 1363)","plug.G.cap":"Three rectangular pins in a triangle with a longer fused earth pin — plug adapter needed.",
+  "plug.I.name":"Type I · three flat pins, V shape","plug.I.cap":"This is the same family as the Chinese 2P+E 3-pin socket — direct fit (with earth).",
+  "plug.M.name":"Type M · three round pins, large (BS 546 15A)","plug.M.cap":"Larger three round pins than Type D, used for high-power devices — plug adapter needed.",
+  "plug.O.name":"Type O · Thai three round (TIS 166-2549)","plug.O.cap":"Three round pins, the earth one thicker (special shape); no official IEC letter, commonly called Type O — plug adapter needed.",
+  "plug.cn.name":"China's new-standard 5-hole socket","plug.cn.cap":"Two flat slots on top (2P, compatible with Type A) + a 2P+E cluster below: the earth hole is a tall vertical flat slot at the top of the cluster (GB 1002-2024: the E pole faces up when viewed from the front), deeper than the two angled slots, which each lean 30° from the vertical. All slots are flat rectangles; round pins are not accepted.","plug.cn.geo":"Hole geometry shown schematically per the GB 1002-2024 / GB/T 1002-2021 drawings (E pole on top; angled slots 30° from the vertical).",
+  "plug.univ.name":"Old universal socket","plug.univ.cap":"The “universal” hole combining 2- and 3-pin slots can take round pins but makes poor contact and overheats easily; production banned since 2010-06 and sale since 2011-06 — do not buy or use.","plug.univ.badge":"One slot, many plug types",
+  "p.note.c.h":"Conclusion:",
+  "p.note.c":"Type C round pins cannot fit new-standard 5-hole sockets — GB/T 1002-2021 removed the “single-phase dual-use socket” (flat + round mixed holes), and the mandatory standard GB 1002-2024 (effective 2025-08-01) keeps that rule. Old universal sockets can still physically accept round pins but are unsafe legacy products.",
+  "sec.ac":"Plug adapter vs voltage converter",
+  "sec.ac.sub":"Don't buy the wrong one — they do completely different jobs and differ hugely in price and size.",
+  "ac.plug.name":"Plug adapter",
+  "ac.plug.l1.h":"Only changes the pin geometry",
+  "ac.plug.l1":" (flat↔round, 2-pin↔3-pin); does not change the voltage level. Inside it is usually just a set of metal contacts.",
+  "ac.plug.l2":"Valid when the device's rated voltage matches the local mains (e.g. a 100–240V wide-range charger on 220V).",
+  "ac.plug.l3":"Cost: a few yuan; small and light.",
+  "ac.plug.l4.h":"Cannot",
+  "ac.plug.l4":" connect a 110V device to a 220V grid — it would burn the device.",
+  "ac.volt.name":"Voltage converter",
+  "ac.volt.l1":"Uses a transformer / electronic conversion to step the mains voltage up or down to what the device needs (e.g. 220V→110V).",
+  "ac.volt.l2":"For devices whose rated voltage does not match the local grid (e.g. US 110V devices used on China's 220V).",
+  "ac.volt.l3":"Expensive, bulky and heavy (transformer type).",
+  "ac.volt.l4":"Chargers from these four countries match the grid voltage, so no voltage converter is needed in China.",
+  "ac.concl.h":"Conclusion:",
+  "ac.concl":"In China, phone and laptop chargers from Thailand, India, Pakistan and Russia need only a plug adapter (Thai flat pins need nothing at all) — a voltage converter is never required.",
+  "sec.strip":"Safe power-strip use guide",
+  "sec.strip.sub":"In dorms and classrooms, power strips are a hot spot for fire risk. Every item below carries source numbers.",
+  "st.1.t":"Buy a CCC-certified, new-standard 5-hole strip",
+  "st.1.b":"Look for the CCC mark and shutter-protected holes (safety shutters); since 2017-04-14, adapters/strips without CCC certification may not be produced, sold or imported.",
+  "st.2.t":"Never buy universal or 2-core products",
+  "st.2.b":"Universal sockets (2- and 3-pin combined): production banned since 2010-06, sale banned since 2011-06 — poor contact causes fires; a 3-pin socket must come with a 3-core earthed plug; 2-core sockets are non-conforming.",
+  "st.3.t":"Mind the rated current / power — don't overload",
+  "st.3.b":"Common ratings are 6A / 10A / 16A: a 10A / 250V~ strip carries roughly 2200W; 16A ≈ 3520W (at 220V). Never plug high-power appliances (air conditioners, microwaves) into low-rated sockets; give them dedicated outlets.",
+  "st.4.t":"Don't daisy-chain strips",
+  "st.4.b":"Plugging one strip into another accumulates contact resistance and current, doubling overload risk.",
+  "st.5.t":"Keep away from moisture and water",
+  "st.5.b":"Never put a strip on the bed or near cups and basins; keep your hands dry when plugging or unplugging.",
+  "st.6.t":"Never use damaged or aged strips",
+  "st.6.b":"Blackened holes, loose plugs or cracked cables mean replacement; strips typically last 3–5 years; replace at overheating, arcing or poor contact.",
+  "st.7.t":"Plug and unplug correctly",
+  "st.7.b":"Grip the plug body, never pull the cable; replace plugs that are too loose or too tight.",
+  "st.8.t":"Unplug when leaving; unplug for long absences",
+  "st.8.b":"Turn off appliances and power when the room is unoccupied; fully switch off chargers and sockets before leaving school.",
+  "st.9.t":"Follow the dorm rules banning high-power appliances",
+  "st.9.b":"The school bans hair dryers, electric kettles, electric pots, immersion heaters, electric stoves and other prohibited appliances, and forbids unauthorized wiring; nationally, the Fire Safety Regulations for Higher Education Institutions also ban unauthorized high-power appliances in crowded places, and the Ministry of Education requires universities to inspect and rectify illegal electricity use in dormitories.",
+  "st.10.t":"Know the new mandatory standard GB 2099.7-2024",
+  "st.10.b":"The Safety Specification for Household Extension Sockets (effective 2025-08-01) requires overcurrent protection (overload protection) on extension sockets with 4 or more outlets, and regulates e-bike charging and other scenarios.",
+  "sec.spu":"About Suzhou Vocational University of Technology",
+  "sec.spu.sub":"The following quotes are taken verbatim from the university's official public pages (accessed and verified 2026-10-12).",
+  "spu.name.title":"Official name & website",
+  "spu.name.body":"The current official name is “Suzhou Vocational University of Technology”. In June 2025, the Ministry of Education's Letter (Jiao Fa Han [2025] No. 279) approved establishing the university on the basis of Suzhou Vocational University and revoked the old establishment; it is a public undergraduate-level vocational university, and the website keeps the domain www.jssvc.edu.cn.",
+  "spu.q1":"“Approved by the MOE Party Leadership Group: establish Suzhou Vocational University of Technology on the basis of Suzhou Vocational University… and revoke the establishment of Suzhou Vocational University… Suzhou Vocational University of Technology is a public undergraduate-level vocational university.” (translated)",
+  "spu.q1.src":"— MOE Letter (Jiao Fa Han [2025] No. 279), source [2]",
+  "spu.intl.title":"International student accommodation rules",
+  "spu.intl.body":"The Accommodation Management System, most directly relevant to international students, explicitly states: power strips must not be placed on beds; high-power appliances and fire-prone appliances are prohibited; unauthorized wiring and modifying dormitory circuits are prohibited; violators may have their accommodation eligibility revoked. This page is a historical document published on 2022-03-10; its title still uses the old school name. International students' application and prospectus are on the International Admissions page.",
+  "spu.q2":"“Article 3… power strips must not be placed on the bed. Article 4: high-power appliances and appliances that may easily cause fire are prohibited; open-flame devices are prohibited… Article 10: students who violate the international student accommodation rules may have their accommodation eligibility revoked.” (translated)",
+  "spu.q2.src":"— Accommodation Management System, source [4]",
+  "spu.security.title":"Security education content",
+  "spu.security.body":"The Security Department's “College Fire Safety” and “Fire Prevention, Extinguishing and Escape” materials require: no unauthorized wiring in dorms; no electric stoves, immersion heaters, rice cookers or similar appliances; turn off appliances and power when the room is unoccupied; always cut power when leaving. The university also runs routine dormitory electricity-safety inspections and fire-safety training.",
+  "spu.q3":"“Do not wire haphazardly; do not use electric stoves, electric cups, immersion heaters, rice cookers, etc.; … when no one is in the room, turn off the appliances and the power switch.” (translated)",
+  "spu.q3.src":"— Security Dept. safety education section, source [6]",
+  "spu.lecture.title":"2025 summer electricity-safety lecture",
+  "spu.lecture.body":"The 2025 summer safety lecture for on-campus students covered “electricity safety” and “fire escape”, explaining the dangers of prohibited dorm appliances and stressing proper use of air conditioners and fans while avoiding unauthorized wiring and overload.",
+  "spu.q4":"“He explained in detail the dangers of prohibited dorm appliances, stressing the need to use air conditioners and fans properly, avoid private wiring and overload, and prevent fire risks at the source.” (translated)",
+  "spu.q4.src":"— Security Dept. news, 2025-07-01, source [7]",
+  "spu.offices.title":"Student Affairs notices",
+  "spu.offices.body":"The Student Affairs Office has reiterated in holiday notices: prohibited appliances (hair dryers, electric kettles, electric pots, etc.) are strictly forbidden, unauthorized wiring and open flames are not allowed; turn off power, water and windows when leaving.",
+  "spu.q5.p1":"“Students staying on campus are strictly forbidden to use prohibited appliances (including hair dryers, electric kettles, electric pots, etc.) or to wire electricity privately.” (translated)",
+  "spu.q5.p2":"“Turn off power, water and windows when leaving.” (translated)",
+  "spu.q5.src":"— Combined Student Affairs notices 2024–2026",
+  "sec.disclaimer":"Disclaimer",
+  "dis.body":"This page is general information and is not professional electrical advice. Always verify the device nameplate and the ratings of the local socket / power strip before use; when in doubt, consult the dorm manager, your counselor, or a qualified electrician. Standards, data and school rules cited here come from publicly verifiable sources accessed on 2026-10-12.",
+  "sec.refs":"References",
+  "sec.refs.sub":"Compiled from the research reports: official SPU pages first, then national standards and government/authoritative sources, then international standards and reference data. Superscript numbers in the text correspond one-to-one with this list.",
+  "refs.access":"Accessed: 2026-10-12",
+  "footer.note":"Use electricity safely — Suzhou Vocational University of Technology",
+  "footer.date":"Last updated: 2026-10-12"
+}
+};
+
+/* ================= 参考文献数据 ================= */
+var REFS = [
+ {n:1, g:'school', zh:'苏州职业技术大学简介', en:'School Profile, Suzhou Vocational University of Technology', url:'https://www.jssvc.edu.cn/xuexgk/xxjj/'},
+ {n:2, g:'school', zh:'教育部关于同意设置苏州职业技术大学的函（教发函〔2025〕279号）', en:'MOE Letter on Establishing Suzhou Vocational University of Technology (Jiao Fa Han [2025] No. 279)', url:'http://www.moe.gov.cn/srcsite/A03/s181/202506/t20250619_1194830.html'},
+ {n:3, g:'school', zh:'省政府关于设置无锡职业技术大学、苏州职业技术大学、扬州职业技术大学的通知（苏政发〔2025〕52号）', en:'Provincial Government Notice on Establishing Wuxi/Suzhou/Yangzhou Vocational Universities (Su Zheng Fa [2025] No. 52)', url:'http://www.jiangsu.gov.cn/art/2025/7/2/art_84418_11593130.html'},
+ {n:4, g:'school', zh:'苏州职业技术大学国际学生住宿管理制度（Accommodation Management System）', en:'Accommodation Management System for International Students', url:'https://gjjl.jssvc.edu.cn/2022/0310/c2235a178581/pagem.htm'},
+ {n:5, g:'school', zh:'国际招生·招生简章栏目（国际合作交流处/国际学院）', en:'International Admissions & Prospectus (International Office / International College)', url:'https://gjjl.jssvc.edu.cn/zsjz/listm.htm'},
+ {n:6, g:'school', zh:'保卫处·安全教育栏目（含《大学生消防安全常识》《防火、灭火、逃生知识》，2022-01-11；正文引语引自该栏目内文章）', en:'Security Dept. Safety Education column (incl. “College Fire Safety”, “Fire Prevention, Extinguishing & Escape”, 2022-01-11; quotes cited from articles in this column)', url:'https://bw.jssvc.edu.cn/aqjy/'},
+ {n:7, g:'school', zh:'保卫处：筑牢暑期安全防线 守护留校学子平安——2025年暑期留校学生安全专题讲座', en:'Security Dept.: 2025 Summer Electricity-Safety Lecture for On-Campus Students', url:'https://bw.jssvc.edu.cn/news/202507/t20250701_401270.html'},
+ {n:8, g:'school', zh:'学生工作处：假期留校学生相关管理要求（2024年寒假）', en:'Student Affairs: Management Requirements for On-Campus Students (2024 Winter Holiday)', url:'https://xsc.jssvc.edu.cn/2024/0103/c1597a185379/page.htm'},
+ {n:9, g:'school', zh:'学生工作处：关于做好2024年秋季学期期末和寒假学生工作的通知', en:'Student Affairs: Notice on End-of-Semester & Winter Holiday (2024)', url:'https://xsc.jssvc.edu.cn/2024/1231/c1597a187442/page.htm'},
+ {n:10, g:'school', zh:'学生工作处：关于做好2026年暑假学生教育管理服务工作的通知', en:'Student Affairs: Notice on 2026 Summer Student Management & Services', url:'https://xsc.jssvc.edu.cn/2026/0706/c1597a191402/page.htm'},
+ {n:11, g:'school', zh:'校党委书记温贻芳深入学生宿舍开展用电安全专项检查', en:'Party Secretary Wen Yifang – Electricity-Safety Inspection of Student Dormitories', url:'https://www.dgsc.jssvc.edu.cn/xww/xxyw/202512/t20251231_447762.shtml'},
+ {n:12, g:'school', zh:'干将路校区开展消防培训活动', en:'Fire-Safety Training at Ganjiang Road Campus', url:'https://www.jssvc.edu.cn/xww/ybdt/202411/t20241101_340034.shtml'},
+ {n:13, g:'std', zh:'全国标准信息公共服务平台：GB 1002-2024 详情', en:'National Standard Info Platform: GB 1002-2024 details', url:'https://std.samr.gov.cn/gb/search/gbDetailed?id=1E0A96CB222E4BB4E06397BE0A0AA9ED'},
+ {n:14, g:'std', zh:'全国标准信息公共服务平台：GB/T 1002-2021 详情', en:'National Standard Info Platform: GB/T 1002-2021 details', url:'https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=CE1E6A1DD3B358F6E05397BE0A0A68DF'},
+ {n:15, g:'std', zh:'西北农林科技大学转载：GB/T 1002-2021 全文 PDF', en:'GB/T 1002-2021 Full Text PDF (mirrored by NWAFU)', url:'https://lxy.nwafu.edu.cn/docs//2023-02/a22ed98208624c00a7210b730a77fdb0.pdf'},
+ {n:16, g:'std', zh:'openstd.samr.gov.cn：GB/T 2099.1-2021（通用要求）', en:'SAMR Open Standard: GB/T 2099.1-2021 (general requirements)', url:'https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=3D6968E8019FE26F72F9F6135DD06515'},
+ {n:17, g:'std', zh:'全国标准信息公共服务平台：GB/T 2099.3-2022 详情（转换器）', en:'National Standard Info Platform: GB/T 2099.3-2022 details (adapters)', url:'https://std.samr.gov.cn/gb/search/gbDetailed?id=EB58F4DA9129B2A2E05397BE0A0A7D33'},
+ {n:18, g:'std', zh:'广东省湛江市标码所：GB 2099.3-2015（强制性，2017-04-14 实施）全文 PDF', en:'GB 2099.3-2015 (Mandatory, effective 2017-04-14) Full Text PDF (Zhanjiang)', url:'http://www.gdzjsc.com/Public/stdPDF/GB!T%202099.3-2015.pdf'},
+ {n:19, g:'std', zh:'国家认监委 2016 年第 3 号公告（转换器/延长线插座纳入 CCC 认证）', en:'CNCA Announcement No. 3 (2016): CCC certification for adapters & extension sockets', url:'https://www.cnca.gov.cn/zwxx/gg/2016/art/2023/art_8f5b3124d454427baed30a1e09fcf7d0.html'},
+ {n:20, g:'std', zh:'中国质量认证中心：国内首张“小五孔”插线板产品 CCC 证书', en:'CQC: First CCC Certificate for a 5-hole Power Strip', url:'https://www.cqc.com.cn/www/col601/535416.html'},
+ {n:21, g:'std', zh:'国家市场监督管理总局：广东开展电器附件新国标宣贯（GB 2099.7-2024）', en:'SAMR: Promotion of New Standard GB 2099.7-2024 for Electrical Accessories', url:'https://www.samr.gov.cn:8890/xw/df/art/2025/art_5d4ae919046e4c0886a7db7f328c6b47.html'},
+ {n:22, g:'std', zh:'央视网/国家应急广播：家里这种插线板赶紧扔！新国标认准这个编码', en:'CCTV/National Emergency Broadcasting: Discard Old Power Strips; Know the New Standard Code (GB 2099.7-2024)', url:'https://news.cctv.com/2025/08/29/ARTIXNZkrgL5ToZlK3zn56dE250829.shtml'},
+ {n:23, g:'std', zh:'央广网：插线板新国家标准 4 月 14 日起正式实施 购买要认准“保护门”', en:'CNR: New National Standard for Power Strips Effective 2017-04-14; Look for Safety Shutters', url:'http://news.cnr.cn/native/city/20170317/t20170317_523662973.shtml'},
+ {n:24, g:'std', zh:'央广网：插座使用不当易起火 一文自查家中是否存在安全隐患', en:'CNR: Improper Socket Use Can Cause Fires — Self-Check Guide', url:'http://news.cnr.cn/native/gd/20260112/t20260112_527491316.shtml'},
+ {n:25, g:'std', zh:'人民周刊（人民日报社）：请淘汰你的不合格插座', en:'People’s Weekly (People’s Daily): Replace Your Non-Conforming Sockets', url:'http://paper.people.com.cn/rmzk/html/2016-04/25/content_1673570.htm'},
+ {n:26, g:'std', zh:'人民网湖南频道：万用不等于安全！万用孔插座 15 年前就被禁止生产了', en:'People’s Daily Online (Hunan): Universal Does Not Mean Safe — Banned 15 Years Ago', url:'http://hn.people.com.cn/n2/2025/0901/c406631-41339263.html'},
+ {n:27, g:'std', zh:'应急管理部：如何安全使用插座？', en:'Ministry of Emergency Management: How to Use Sockets Safely', url:'https://www.mem.gov.cn/kp/shaq/202010/t20201023_370853.shtml'},
+ {n:28, g:'std', zh:'国家消防救援局（中国消防）：冬季防火请牢记这 7 个“别”', en:'National Fire and Rescue Administration: 7 “Don’ts” for Winter Fire Safety', url:'https://www.119.gov.cn/kp/hzyf/jt/2022/33914.shtml'},
+ {n:29, g:'std', zh:'教育部/公安部《高等学校消防安全管理规定》（28 号令）', en:'MOE/MPS: Fire Safety Regulations for Higher Education Institutions (Order No. 28)', url:'http://www.moe.gov.cn/jyb_xxgk/xxgk/zhengce/guizhang/202112/t20211206_585092.html'},
+ {n:30, g:'std', zh:'教育部办公厅：关于做好高等学校消防安全工作的通知', en:'MOE General Office: Notice on Fire Safety in Higher Education Institutions', url:'http://www.moe.gov.cn/srcsite/A03/s3013/201904/t20190423_379237.html'},
+ {n:31, g:'std', zh:'科普中国：快自查！家里有这种插线板的赶紧扔', en:'Science China: Self-Check Your Power Strips — Throw Away Unsafe Ones', url:'https://cloud.kepuchina.cn/h5/detail?id=7361480558987071488'},
+ {n:32, g:'std', zh:'国家电网 95598：GB/T 12325-2008 全文 PDF', en:'State Grid 95598: GB/T 12325-2008 Full Text PDF', url:'https://www.95598.cn/omg-static//omg-static/99305211841160352877001750685895.pdf'},
+ {n:33, g:'std', zh:'国家发改委：《供电营业规则》', en:'NDRC: Electricity Supply Business Rules', url:'http://zfxxgk.ndrc.gov.cn/web/iteminfo.jsp?id=20347'},
+ {n:34, g:'std', zh:'中国政府网：发改委令第 14 号《供电营业规则》（2024）', en:'Gov.cn: NDRC Order No. 14, Electricity Supply Business Rules (2024)', url:'https://www.gov.cn/gongbao/2024/issue_11326/202405/content_6949617.html'},
+ {n:35, g:'intl', zh:'Wikipedia (Kiwix)：Mains electricity by country', en:'Wikipedia (Kiwix): Mains electricity by country', url:'https://kiwix.gnuisnotunix.com/wikipedia_en_all_maxi_2021-12/Mains_electricity_by_country'},
+ {n:36, g:'intl', zh:'Wikipedia (Kiwix)：Mains electricity', en:'Wikipedia (Kiwix): Mains electricity', url:'https://kiwix.gnuisnotunix.com/wikipedia_en_all_maxi_2021-12/Mains_electricity'},
+ {n:37, g:'intl', zh:'TISI：TIS 166-2549 英文全文 PDF', en:'TISI: TIS 166-2549 English Full Text PDF', url:'https://www.tisi.go.th/data/standard/fulltext_e/tis166_2549.pdf'},
+ {n:38, g:'intl', zh:'TISI 标准商店：TIS 166-2549 条目', en:'TISI Standard Shop: TIS 166-2549 item', url:'https://service.tisi.go.th/tisi-standard-shop/item/tis/867'},
+ {n:39, g:'intl', zh:'Museum of Plugs and Sockets：TIS 166-2549 Thai 3-pole plugs', en:'Museum of Plugs and Sockets: TIS 166-2549 Thai 3-pole plugs', url:'https://www.plugsocketmuseum.nl/Thai_3polePlugs.html'},
+ {n:40, g:'intl', zh:'BIS：IS 1293:2019 产品手册', en:'BIS: IS 1293:2019 Product Manual', url:'https://www.bis.gov.in/wp-content/uploads/2021/01/PM_1293_V2.pdf'},
+ {n:41, g:'intl', zh:'BIS：Plugs and Sockets 概述', en:'BIS: Plugs and Sockets Overview', url:'https://www.bis.gov.in/wp-content/uploads/2023/08/Plugs-and-Sockets-20.pdf'},
+ {n:42, g:'intl', zh:'印度 PIB 官方新闻稿（2024-07-05）：IS 1660:2024 = 锻造与铸造铝制器皿规范（非插座标准）', en:'PIB Press Release (2024-07-05): IS 1660:2024 = wrought & cast aluminium utensils (not sockets)', url:'https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2030890'},
+ {n:43, g:'intl', zh:'Power Plugs & Sockets：Thailand', en:'Power Plugs & Sockets: Thailand', url:'https://powerplugsockets.world/country/thailand/'},
+ {n:44, g:'intl', zh:'Power Plugs & Sockets：India', en:'Power Plugs & Sockets: India', url:'https://powerplugsockets.world/country/india/'},
+ {n:45, g:'intl', zh:'Power Plugs & Sockets：Pakistan', en:'Power Plugs & Sockets: Pakistan', url:'https://powerplugsockets.world/country/pakistan/'},
+ {n:46, g:'intl', zh:'World Standards：China（plug/voltage）', en:'World Standards: China (plug/voltage)', url:'https://www.worldstandards.eu/electricity/plug-voltage-by-country/china/'},
+ {n:47, g:'intl', zh:'Electrical Safety First：Russia travel adaptor', en:'Electrical Safety First: Russia travel adaptor', url:'https://www.electricalsafetyfirst.org.uk/safety-advice/travel-advice/russia/'},
+ {n:48, g:'intl', zh:'gostinfo.ru：ГОСТ 29322-2014 登记', en:'gostinfo.ru: ГОСТ 29322-2014 record', url:'https://www.gostinfo.ru/catalog/Details/?id=5531688'},
+ {n:49, g:'intl', zh:'electro.tomathouse：220 or 230 volts?', en:'electro.tomathouse: 220 or 230 volts?', url:'https://my.electricianexp.com/en/napryazhenie-220-ili-230-volt.html'},
+ {n:50, g:'intl', zh:'meganorm.ru：ГОСТ 7396.1-89 全文 PDF', en:'meganorm.ru: ГОСТ 7396.1-89 Full Text PDF', url:'https://meganorm.ru/Data/112/11218.pdf'},
+ {n:51, g:'intl', zh:'Travel Power Plugs：Pakistan', en:'Travel Power Plugs: Pakistan', url:'https://www.travelpowerplugs.com/pakistan-electric-plug-types-will-you-need-an-adapter'},
+ {n:52, g:'intl', zh:'ElectronicsHub：Pakistan Electrical Plug Guide', en:'ElectronicsHub: Pakistan Electrical Plug Guide', url:'https://electronics.alibaba.com/buyingguides/pakistan-plug-guide-type-c-vs-d,-adapters-voltage-facts'},
+ {n:53, g:'intl', zh:'PlugTypes.com：India', en:'PlugTypes.com: India', url:'https://plugtypes.com/country/india'},
+ {n:54, g:'intl', zh:'PlugTypes.com：Russia', en:'PlugTypes.com: Russia', url:'https://plugtypes.com/country/russia'}
+];
+var REF_GROUPS = [
+ {key:'school', zh:'苏州职业技术大学官网', en:'Suzhou Vocational University of Technology (official)'},
+ {key:'std', zh:'国家标准与政府/权威来源', en:'National standards & official sources'},
+ {key:'intl', zh:'国际标准机构与权威数据', en:'International standards & reference data'}
+];
+
+/* ================= 五国数据 ================= */
+var COUNTRIES = [
+ {code:'TH', zh:'泰国', en:'Thailand', voltNum:230, freqNum:50,
+  voltZh:'230V（旧资料常称 220V）', voltEn:'230V (older sources often say 220V)',
+  officialZh:'Type O（TIS 166-2549）', officialEn:'Type O (TIS 166-2549)',
+  commonZh:'A、B、C、F', commonEn:'A, B, C, F',
+  stdZh:'TIS 166-2549（2006）；历史：TIS 116', stdEn:'TIS 166-2549 (2006); historical: TIS 116',
+  compatZh:'电压兼容；扁二脚（A）可直插两孔，圆脚（C/O/F）需插头转换器', compatEn:'Voltage OK; flat 2-pin (A) fits 2-pin socket; round pins (C/O/F) need plug adapter',
+  noteZh:'Type O 为泰国特有，IEC 字母表无官方代号，业界俗称“Type O”', noteEn:'Type O is Thai-specific; no official IEC letter, commonly called “Type O”',
+  cites:[37,38,39,43]},
+ {code:'IN', zh:'印度', en:'India', voltNum:230, freqNum:50,
+  voltZh:'230V', voltEn:'230V',
+  officialZh:'C、D、M（IS 1293 覆盖 ≤250V、≤16A）', officialEn:'C, D, M (IS 1293 covers ≤250V, ≤16A)',
+  commonZh:'D（BS 546 三圆脚 5A，老建筑/家庭最多）、C、M', commonEn:'D (BS 546 5A, most common in older homes), C, M',
+  stdZh:'IS 1293（现行版 2019，第四修订）；渊源 BS 546', stdEn:'IS 1293 (current ed. 2019, 4th revision); derived from BS 546',
+  compatZh:'电压兼容；C/D/M 均为圆脚，需插头转换器', compatEn:'Voltage OK; C/D/M are all round-pin — plug adapter needed',
+  noteZh:'任务清单中的“IS 1660”实为铝制器皿标准，非插座标准，应更正为 IS 1293', noteEn:'“IS 1660” in the brief is actually the aluminium utensils standard, not sockets — corrected to IS 1293',
+  cites:[40,41,42,44,53]},
+ {code:'PK', zh:'巴基斯坦', en:'Pakistan', voltNum:230, freqNum:50,
+  voltZh:'230V', voltEn:'230V',
+  officialZh:'D（沿袭 BS 546，PSQCA 认证，标准号待官方核）', officialEn:'D (follows BS 546, PSQCA-certified; standard number pending official confirmation)',
+  commonZh:'C、D、G（新装逐渐增多）、M', commonEn:'C, D, G (increasing in new installs), M',
+  stdZh:'沿袭 BS 546（PSQCA 认证体系）；另有 BS 1363（Type G）体系并存', stdEn:'Follows BS 546 (PSQCA certification system); BS 1363 (Type G) system also in use',
+  compatZh:'电压兼容；C/D/G/M 均需插头转换器', compatEn:'Voltage OK; C/D/G/M all need plug adapter',
+  noteZh:'据行业资料（ElectronicsHub），未经 PSQCA 官方确认；标准号待核', noteEn:'Per industry source (ElectronicsHub), not confirmed by PSQCA; number pending verification',
+  cites:[45,51,52]},
+ {code:'RU', zh:'俄罗斯', en:'Russia', voltNum:230, freqNum:50,
+  voltZh:'230V（官方 ГОСТ 29322-2014）；惯用 220V', voltEn:'230V (official GOST 29322-2014); commonly stated 220V',
+  officialZh:'C、F（GOST 7396 系列）', officialEn:'C, F (GOST 7396 series)',
+  commonZh:'C、F', commonEn:'C, F',
+  stdZh:'ГОСТ 7396.1-89；ГОСТ 29322-2014（采用 IEC 60038:2009）', stdEn:'GOST 7396.1-89; GOST 29322-2014 (adopts IEC 60038:2009)',
+  compatZh:'电压兼容；C/F 均为圆脚，需插头转换器', compatEn:'Voltage OK; C/F are round-pin — plug adapter needed',
+  noteZh:'自 2015-10-01（ГОСТ 29322-2014 生效）起标称 230V；此前惯用 220V', noteEn:'Nominal 230V since GOST 29322-2014 took effect 2015-10-01; 220V was common before',
+  cites:[47,48,49,50,54]},
+ {code:'CN', zh:'中国', en:'China', voltNum:220, freqNum:50,
+  voltZh:'220V（允许 +7%/−10%）', voltEn:'220V (tolerance +7%/−10%)',
+  officialZh:'两扁脚 2P（Type A 兼容）+ 三扁 V 形 2P+E（Type I）', officialEn:'Two flat pins 2P (Type A compatible) + three flat V-shape 2P+E (Type I)',
+  commonZh:'同左；老式“双用/万用孔”插座已淘汰', commonEn:'Same; old “dual-use/universal” sockets are obsolete',
+  stdZh:'GB 1002-2024（现行）；GB/T 2099.1-2021；GB/T 2099.3-2022；GB 2099.7-2024', stdEn:'GB 1002-2024 (current); GB/T 2099.1-2021; GB/T 2099.3-2022; GB 2099.7-2024',
+  compatZh:'—（基准国）', compatEn:'— (baseline)',
+  noteZh:'国际资料常列 A、C、I——其中 C 对应已被新国标删除的双用插座', noteEn:'International sources often list A, C, I — the “C” refers to the now-removed dual-use socket',
+  cites:[13,14,15,16,17,46]}
+];
+
+/* ================= 插头热力图数据 ================= */
+var PLUG_TYPES = ['A','B','C','D','E','F','G','I','M','O'];
+var PLUG_MATRIX = {
+  TH:{O:'official', A:'common', B:'common', C:'common', F:'common'},
+  IN:{C:'official', D:'official', M:'official'},
+  PK:{D:'official', C:'common', G:'common', M:'common'},
+  RU:{C:'official', F:'official'},
+  CN:{A:'official', I:'official'}
+};
+
+/* ================= 渲染 ================= */
+var cur = 'zh';
+var chart1 = null, chart2 = null;
+
+function applyLang(){
+  var L = I18N[cur] || I18N.zh;
+  document.documentElement.lang = (cur === 'zh') ? 'zh-CN' : 'en';
+  var els = document.querySelectorAll('[data-i18n]');
+  for (var i = 0; i < els.length; i++) {
+    var k = els[i].getAttribute('data-i18n');
+    if (L[k] !== undefined) els[i].textContent = L[k];
+  }
+  document.getElementById('btnZh').classList.toggle('active', cur === 'zh');
+  document.getElementById('btnEn').classList.toggle('active', cur === 'en');
+  renderTable();
+  renderRefs();
+  renderCharts();
+  try { localStorage.setItem('site-lang', cur); } catch (e) {}
+}
+
+function renderTable(){
+  var L = I18N[cur] || I18N.zh;
+  var h = '<table><colgroup><col style="width:10%"><col style="width:11%"><col style="width:7%"><col style="width:14%"><col style="width:15%"><col style="width:17%"><col style="width:14%"><col style="width:12%"></colgroup><thead><tr>';
+  var heads = ['t.country','t.voltage','t.freq','t.official','t.common','t.std','t.compat','t.notes'];
+  for (var j = 0; j < heads.length; j++) h += '<th>' + L[heads[j]] + '</th>';
+  h += '</tr></thead><tbody>';
+  for (var r = 0; r < COUNTRIES.length; r++) {
+    var c = COUNTRIES[r];
+    h += '<tr><td><b>' + (cur === 'zh' ? c.zh : c.en) + '</b></td>'
+      + '<td class="mono">' + (cur === 'zh' ? c.voltZh : c.voltEn) + '</td>'
+      + '<td class="mono">' + c.freqNum + 'Hz</td>'
+      + '<td>' + (cur === 'zh' ? c.officialZh : c.officialEn) + '</td>'
+      + '<td>' + (cur === 'zh' ? c.commonZh : c.commonEn) + '</td>'
+      + '<td>' + (cur === 'zh' ? c.stdZh : c.stdEn);
+    for (var s = 0; s < c.cites.length; s++) h += '<sup class="cite">' + c.cites[s] + '</sup>';
+    h += '</td><td>' + (cur === 'zh' ? c.compatZh : c.compatEn) + '</td>'
+      + '<td>' + (cur === 'zh' ? c.noteZh : c.noteEn) + '</td></tr>';
+  }
+  h += '</tbody></table>';
+  document.getElementById('cmpTableWrap').innerHTML = h;
+}
+
+function renderRefs(){
+  var L = I18N[cur] || I18N.zh;
+  var h = '';
+  for (var g = 0; g < REF_GROUPS.length; g++) {
+    var grp = REF_GROUPS[g];
+    h += '<div class="refs-group"><h3>' + (cur === 'zh' ? grp.zh : grp.en) + '</h3><ol>';
+    for (var i = 0; i < REFS.length; i++) {
+      var r = REFS[i];
+      if (r.g !== grp.key) continue;
+      h += '<li>[' + r.n + '] ' + (cur === 'zh' ? r.zh : r.en)
+        + ' — <a class="url" href="' + r.url + '" target="_blank" rel="noopener">' + r.url + '</a> '
+        + '<span class="access">' + L['refs.access'] + '</span></li>';
+    }
+    h += '</ol></div>';
+  }
+  document.getElementById('refGroups').innerHTML = h;
+}
+
+/* ================= 图表 ================= */
+function buildVoltageOption(l){
+  var L = I18N[l] || I18N.zh;
+  var names = COUNTRIES.map(function(c){ return (l === 'zh') ? c.zh : c.en; });
+  return {
+    title: { text: L['chart1.title'], left: 'center', textStyle: { fontSize: 15 } },
+    tooltip: { trigger: 'axis', triggerOn: 'click', renderMode: 'richText', confine: true },
+    legend: { data: [L['chart1.series.v'], L['chart1.series.f']], top: 28 },
+    grid: { left: 8, right: 44, top: 64, bottom: 8, containLabel: true },
+    xAxis: { type: 'category', data: names, axisLabel: { interval: 0 } },
+    yAxis: [
+      { type: 'value', name: L['chart1.y.v'], min: 0, max: 250 },
+      { type: 'value', name: L['chart1.y.f'], min: 0, max: 60 }
+    ],
+    series: [
+      { name: L['chart1.series.v'], type: 'bar', yAxisIndex: 0, barWidth: '32%',
+        data: COUNTRIES.map(function(c){ return c.voltNum; }),
+        label: { show: true, position: 'top', formatter: function(p){ return p.value + 'V'; } },
+        markLine: { symbol: 'none', data: [{ yAxis: 220 }], lineStyle: { type: 'dashed' },
+          label: { formatter: L['chart1.ref'], position: 'insideEndTop' } } },
+      { name: L['chart1.series.f'], type: 'bar', yAxisIndex: 1, barWidth: '32%',
+        data: COUNTRIES.map(function(c){ return c.freqNum; }),
+        label: { show: true, position: 'top', formatter: function(p){ return p.value + 'Hz'; } } }
+    ]
+  };
+}
+
+function buildPlugsOption(l){
+  var L = I18N[l] || I18N.zh;
+  var rows = COUNTRIES.map(function(c){ return (l === 'zh') ? c.zh : c.en; });
+  var valLabel = { official: 2, common: 1, notused: 0 };
+  var valText = { official: L['chart2.official'], common: L['chart2.common'], notused: L['chart2.notused'] };
+  var data = [];
+  for (var ri = 0; ri < rows.length; ri++) {
+    var code = COUNTRIES[ri].code;
+    for (var ti = 0; ti < PLUG_TYPES.length; ti++) {
+      var t = PLUG_TYPES[ti];
+      var key = (PLUG_MATRIX[code] && PLUG_MATRIX[code][t]) || 'notused';
+      data.push([ti, ri, valLabel[key], t]);
+    }
+  }
+  return {
+    title: { text: L['chart2.title'], left: 'center', textStyle: { fontSize: 15 } },
+    tooltip: { triggerOn: 'click', renderMode: 'richText', confine: true,
+      formatter: function(p){
+        if (!p || !p.data || p.data.length < 4) return '';
+        var t = p.data[3];
+        var code = COUNTRIES[p.data[1]].code;
+        var key = (PLUG_MATRIX[code] && PLUG_MATRIX[code][t]) || 'notused';
+        return 'Type ' + t + ' × ' + rows[p.data[1]] + String.fromCharCode(10) + valText[key];
+      } },
+    grid: { left: 8, right: 12, top: 50, bottom: 62, containLabel: true },
+    xAxis: { type: 'category', data: PLUG_TYPES.map(function(t){ return 'Type ' + t; }), splitArea: { show: true } },
+    yAxis: { type: 'category', data: rows, splitArea: { show: true } },
+    visualMap: { min: 0, max: 2, show: true, orient: 'horizontal', left: 'center', bottom: 4,
+      text: [L['chart2.official'], L['chart2.notused']],
+      pieces: [
+        { min: 2, max: 2, label: L['chart2.official'], color: '#0F766E' },
+        { min: 1, max: 1, label: L['chart2.common'], color: '#F59E0B' },
+        { min: 0, max: 0, label: L['chart2.notused'], color: '#E5E7EB' }
+      ] },
+    series: [{ type: 'heatmap', data: data,
+      label: { show: true, formatter: function(p){ return (p && p.data && p.data[3]) ? p.data[3] : ''; }, color: '#1C2A33' },
+      emphasis: { itemStyle: { shadowBlur: 6, shadowColor: 'rgba(0,0,0,.3)' } } }]
+  };
+}
+
+function renderCharts(){
+  if (chart1) chart1.setOption(buildVoltageOption(cur), true);
+  if (chart2) chart2.setOption(buildPlugsOption(cur), true);
+}
+
+function initCharts(){
+  if (!window.echarts) return;
+  var el1 = document.getElementById('chart-voltage');
+  var el2 = document.getElementById('chart-plugs');
+  if (el1) chart1 = echarts.init(el1);
+  if (el2) chart2 = echarts.init(el2);
+  renderCharts();
+}
+
+function loadEChartsFallback(){
+  if (window.echarts) return;
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js';
+  s.onload = function(){ initCharts(); };
+  s.onerror = function(){
+    document.getElementById('chartFail1').style.display = 'block';
+    document.getElementById('chartFail2').style.display = 'block';
+  };
+  document.body.appendChild(s);
+}
+
+window.addEventListener('resize', function(){
+  if (chart1) chart1.resize();
+  if (chart2) chart2.resize();
+});
+window.addEventListener('orientationchange', function(){
+  if (chart1) chart1.resize();
+  if (chart2) chart2.resize();
+});
+setTimeout(function(){
+  if (chart1) chart1.resize();
+  if (chart2) chart2.resize();
+}, 800);
+
+/* ================= 启动 ================= */
+(function init(){
+  var stored = null;
+  try { stored = localStorage.getItem('site-lang'); } catch (e) {}
+  var bl = (navigator.language || 'zh').toLowerCase();
+  cur = (stored === 'en' || stored === 'zh') ? stored : (bl.indexOf('zh') === 0 ? 'zh' : 'en');
+  document.getElementById('btnZh').addEventListener('click', function(){ if (cur !== 'zh') { cur = 'zh'; applyLang(); } });
+  document.getElementById('btnEn').addEventListener('click', function(){ if (cur !== 'en') { cur = 'en'; applyLang(); } });
+  applyLang();
+})();
+</script>
+
+<script src="https://registry.npmmirror.com/echarts/5/dist/echarts.min.js" onload="initCharts()" onerror="loadEChartsFallback()"></script>
+
+</main>
 </body>
 </html>
